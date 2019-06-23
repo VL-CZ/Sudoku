@@ -3,12 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace Sudoku.Models
 {
     public class Cell : ObservableObject
     {
+        /// <summary>
+        /// minimum possible value of the cell
+        /// </summary>
+        private static readonly int minValue = 0;
+
+        /// <summary>
+        /// maximum possible value of the cell
+        /// </summary>
+        private static readonly int maxValue = 9;
+
         private int id;
 
         /// <summary>
@@ -27,12 +38,12 @@ namespace Sudoku.Models
             }
         }
 
-        private int value;
+        private int? value;
 
         /// <summary>
         /// cell value
         /// </summary>
-        public int Value
+        public int? Value
         {
             get
             {
@@ -40,14 +51,47 @@ namespace Sudoku.Models
             }
             set
             {
-                this.value = value;
+                int? val = value;
+                if (isDefaultValue == false && (val == null) || (val >= minValue && val <= maxValue))
+                {
+                    this.value = val;
+                }
                 RaisePropertyChanged();
             }
         }
 
-        public Cell(int content)
+        /// <summary>
+        /// is this value default? (player can't change it)
+        /// </summary>
+        private readonly bool isDefaultValue;
+
+        private Brush background;
+
+        /// <summary>
+        /// background colour of the cell
+        /// </summary>
+        public Brush Background
         {
-            Value = content;
+            get
+            {
+                if (isDefaultValue)
+                {
+                    return Brushes.LightGray;
+                }
+                else
+                    return Brushes.WhiteSmoke;
+            }
+            set
+            {
+                background = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public Cell(int value)
+        {
+            Value = value;
+            isDefaultValue = false;
         }
 
         public override string ToString()

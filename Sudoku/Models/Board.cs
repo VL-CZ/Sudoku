@@ -38,13 +38,15 @@ namespace Sudoku.Models
 
         private void FillBoard()
         {
+            Random random = new Random();
+
             for (int i = 0; i < BoardSize; i++)
             {
                 var row = new ObservableCollection<Cell>();
 
                 for (int j = 0; j < BoardSize; j++)
                 {
-                    row.Add(new Cell((new Random()).Next(1, BoardSize)));
+                    row.Add(new Cell(random.Next(1, BoardSize + 1)));
                 }
 
                 Cells.Add(row);

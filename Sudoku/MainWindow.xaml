@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sudoku"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="700" MinWidth="1200" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Closed="Window_Closed">
+        Title="MainWindow" MinHeight="700" MinWidth="1200" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow">
 
     <Window.Resources>
         <DataTemplate x:Key="DataTemplate_Level2">
-            <TextBox Text="{Binding Value}" Height="50" Width="50" BorderThickness="0.5"
-                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" />
+            <TextBox Text="{Binding Value}" Height="50" Width="50" BorderThickness="0.5" BorderBrush="Black" Background="{Binding Background}"
+                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" KeyDown="TextBox_KeyDown" />
         </DataTemplate>
 
         <DataTemplate x:Key="DataTemplate_Level1">

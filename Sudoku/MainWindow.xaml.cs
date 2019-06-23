@@ -22,6 +22,7 @@ namespace Sudoku
     public partial class MainWindow : Window
     {
         private GameVM gameVM;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,9 +30,12 @@ namespace Sudoku
             DataContext = gameVM;
         }
 
-        private void Window_Closed(object sender, EventArgs e)
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.Key == Key.Enter)
+            {
+                GameIC.Focus();
+            }
         }
     }
 }
