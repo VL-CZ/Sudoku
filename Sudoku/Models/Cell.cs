@@ -88,10 +88,10 @@ namespace Sudoku.Models
             }
         }
 
-        public Cell(int value)
+        public Cell(int? value, bool defaultValue)
         {
             Value = value;
-            isDefaultValue = false;
+            isDefaultValue = defaultValue;
         }
 
         public override string ToString()

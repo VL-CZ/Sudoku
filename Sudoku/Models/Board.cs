@@ -36,6 +36,9 @@ namespace Sudoku.Models
             FillBoard();
         }
 
+        /// <summary>
+        /// fill board (generate sudoku) according to sudoku rules
+        /// </summary>
         private void FillBoard()
         {
             Random random = new Random();
