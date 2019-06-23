@@ -36,5 +36,12 @@ namespace Sudoku.Views
                 GameIC.Focus();
             }
         }
+
+        private void QuitGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = new MainWindow();
+            window.Show();
+            this.Close();
+        }
     }
 }

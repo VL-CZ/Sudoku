@@ -1,4 +1,5 @@
 ﻿using Sudoku.ViewModels;
+using Sudoku.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,28 @@ namespace Sudoku
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void EasyGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            GameWindow window = new GameWindow();
+            window.Show();
+            this.Close();
+        }
+
+        private void MediumGameButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HardGameButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CloseAppButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

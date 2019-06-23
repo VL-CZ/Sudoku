@@ -43,6 +43,7 @@
         <ItemsControl Name="GameIC" Grid.Row="1" ItemsSource="{Binding Board.Cells}" ItemTemplate="{DynamicResource DataTemplate_Level1}"
                       VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="5" BorderBrush="Black" />
 
+        <Button Content="Quit Game" Name="QuitGameButton" Click="QuitGameButton_Click" Grid.Row="2"></Button>
         <!--<StackPanel Orientation="Vertical" Name="WinnerTextBlock" Visibility="Hidden" Grid.Row="2">
             <TextBlock Style="{StaticResource NormalText}">
                 <Run Text="Winner: " />

@@ -16,13 +16,13 @@
             <TextBlock FontWeight="Bold" Style="{StaticResource Heading}">SUDOKU</TextBlock>
             <TextBlock Style="{StaticResource NormalText}">Play:</TextBlock>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                <Button Content="Easy"></Button>
-                <Button Content="Medium"></Button>
-                <Button Content="Hard"></Button>
+                <Button Content="Easy" Name="EasyGameButton" Click="EasyGameButton_Click"></Button>
+                <Button Content="Medium" Name="MediumGameButton" Click="MediumGameButton_Click"></Button>
+                <Button Content="Hard" Name="HardGameButton" Click="HardGameButton_Click"></Button>
             </StackPanel>
         </StackPanel>
 
-        <Button Grid.Row="1" Content="Quit game"></Button>
+        <Button Grid.Row="1" Content="Close app" Name="CloseAppButton" Click="CloseAppButton_Click"></Button>
 
         <TextBlock Grid.Row="2" Style="{StaticResource NormalText}">© Vojtěch Lengál, 2019</TextBlock>
     </Grid>
