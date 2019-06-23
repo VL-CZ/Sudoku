@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sudoku"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" MinHeight="700" MinWidth="1200" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow">
+
     <Window.Resources>
         <DataTemplate x:Key="DataTemplate_Level2">
-            <Button Content="{Binding Content}" Tag="{Binding Id}" Height="20" Width="20" BorderThickness="0.5" Background="{Binding Background}"
-                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" />
+            <Button Content="{Binding Value}" Height="50" Width="50" BorderThickness="0.5"
+                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" />
         </DataTemplate>
 
         <DataTemplate x:Key="DataTemplate_Level1">
-            <ItemsControl ItemsSource="{Binding}" ItemTemplate="{DynamicResource DataTemplate_Level2}">
+            <ItemsControl ItemsSource="{Binding}" ItemTemplate="{DynamicResource DataTemplate_Level2}" Margin="0">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Horizontal" Margin="0" />
@@ -22,6 +23,7 @@
             </ItemsControl>
         </DataTemplate>
     </Window.Resources>
+    
     <Grid Margin="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
@@ -32,21 +34,21 @@
         <StackPanel Orientation="Horizontal" Grid.Row="0">
             <TextBlock Style="{StaticResource NormalText}">
                 <Run Text="Time: " />
-                <Run Text="{Binding GameTimer.Minutes}" />
+                <Run Text="{Binding Timer.Minutes}" />
                 <Run Text=":" />
-                <Run Text="{Binding GameTimer.Seconds, StringFormat=00}" />
+                <Run Text="{Binding Timer.Seconds, StringFormat=00}" />
             </TextBlock>
         </StackPanel>
 
-        <ItemsControl Name="GameIC" Grid.Row="1" ItemsSource="{Binding GameBoard.Board}" ItemTemplate="{DynamicResource DataTemplate_Level1}"
-                      VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ItemsControl Name="GameIC" Grid.Row="1" ItemsSource="{Binding Board.Cells}" ItemTemplate="{DynamicResource DataTemplate_Level1}"
+                      VerticalAlignment="Center" HorizontalAlignment="Center" />
 
-        <StackPanel Orientation="Vertical" Name="WinnerTextBlock" Visibility="Hidden" Grid.Row="2">
+        <!--<StackPanel Orientation="Vertical" Name="WinnerTextBlock" Visibility="Hidden" Grid.Row="2">
             <TextBlock Style="{StaticResource NormalText}">
                 <Run Text="Winner: " />
                 <Run Text="{Binding GameBoard.Winner, Mode=OneWay}" />
             </TextBlock>
             <TextBlock Style="{StaticResource NormalText}">Click 'Quit game' button to select game mode and play again.</TextBlock>
-        </StackPanel>
+        </StackPanel>-->
     </Grid>
 </Window>

@@ -1,22 +1,21 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-//using Tic_Tac_Toe.Models;
+﻿using Sudoku.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-//namespace Tic_Tac_Toe.ViewModels
-//{
-//    class GameVM : BaseVM
-//    {
-//        protected readonly int gameBoardSize = 25;
-//        public GameBoard GameBoard { get; }
-//        public GameTimer GameTimer { get; }
+namespace Sudoku.ViewModels
+{
+    class GameVM : BaseVM
+    {
+        public Board Board { get; }
+        public GameTimer Timer { get; }
 
-//        public GameVM()
-//        {
-//            GameBoard = new GameBoard(gameBoardSize);
-//            GameTimer = new GameTimer();
-//        }
-//    }
-//}
+        public GameVM()
+        {
+            Board = new Board();
+            Timer = new GameTimer();
+        }
+    }
+}
