@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sudoku"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="700" MinWidth="1200" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow">
+        Title="MainWindow" MinHeight="700" MinWidth="1200" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Closed="Window_Closed">
 
     <Window.Resources>
         <DataTemplate x:Key="DataTemplate_Level2">
-            <Button Content="{Binding Value}" Height="50" Width="50" BorderThickness="0.5"
+            <TextBox Text="{Binding Value}" Height="50" Width="50" BorderThickness="0.5"
                     HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" />
         </DataTemplate>
 
@@ -17,13 +17,13 @@
             <ItemsControl ItemsSource="{Binding}" ItemTemplate="{DynamicResource DataTemplate_Level2}" Margin="0">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal" Margin="0" />
+                        <StackPanel Orientation="Horizontal" Margin="0"></StackPanel>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
         </DataTemplate>
     </Window.Resources>
-    
+
     <Grid Margin="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
@@ -39,9 +39,9 @@
                 <Run Text="{Binding Timer.Seconds, StringFormat=00}" />
             </TextBlock>
         </StackPanel>
-
+        
         <ItemsControl Name="GameIC" Grid.Row="1" ItemsSource="{Binding Board.Cells}" ItemTemplate="{DynamicResource DataTemplate_Level1}"
-                      VerticalAlignment="Center" HorizontalAlignment="Center" />
+                      VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="5" BorderBrush="Black" />
 
         <!--<StackPanel Orientation="Vertical" Name="WinnerTextBlock" Visibility="Hidden" Grid.Row="2">
             <TextBlock Style="{StaticResource NormalText}">

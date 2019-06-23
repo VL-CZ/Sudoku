@@ -9,7 +9,6 @@
         <Style TargetType="StackPanel">
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="Margin" Value="10" />
         </Style>
 
         <!-- TextBlock.Heading -->

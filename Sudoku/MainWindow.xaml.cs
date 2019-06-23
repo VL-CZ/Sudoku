@@ -28,5 +28,10 @@ namespace Sudoku
             gameVM = new GameVM();
             DataContext = gameVM;
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+
+        }
     }
 }
