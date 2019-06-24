@@ -10,6 +10,8 @@ namespace Sudoku.Models
 {
     class SudokuSquare
     {
+        #region Fields and Properties
+
         private static Random generator = new Random();
 
         private readonly int numberOfCells = 9;
@@ -25,6 +27,8 @@ namespace Sudoku.Models
         }
 
         public ObservableCollection<ObservableCollection<SudokuCell>> Cells { get; }
+
+        #endregion
 
         public SudokuSquare(int id)
         {

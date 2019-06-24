@@ -8,7 +8,11 @@ namespace Sudoku.Models
 {
     class SudokuGenerator
     {
+        #region Fields and Properties
+
         public Board Board { get; }
+
+        #endregion
 
         public SudokuGenerator(Board board)
         {

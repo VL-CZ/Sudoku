@@ -9,6 +9,8 @@ namespace Sudoku.Models
 {
     internal class GameTimer : ObservableObject
     {
+        #region Fields and Properties
+
         /// <summary>
         /// instance of timer
         /// </summary>
@@ -53,6 +55,8 @@ namespace Sudoku.Models
                 RaisePropertyChanged();
             }
         }
+
+        #endregion
 
         public GameTimer()
         {

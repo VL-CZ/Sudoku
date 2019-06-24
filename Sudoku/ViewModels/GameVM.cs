@@ -10,11 +10,29 @@ namespace Sudoku.ViewModels
 {
     class GameVM : BaseVM
     {
+        #region Fields and Properties
+
+        /// <summary>
+        /// difficulty of the sudoku
+        /// </summary>
         private readonly GameDifficulty difficulty;
 
+        /// <summary>
+        /// sudoku board
+        /// </summary>
         public Board Board { get; }
+
+        /// <summary>
+        /// game timer
+        /// </summary>
         public GameTimer Timer { get; }
-        public SudokuGenerator Generator { get; }        
+
+        /// <summary>
+        /// sudoku generator
+        /// </summary>
+        public SudokuGenerator Generator { get; }
+
+        #endregion
 
         public GameVM(GameDifficulty difficulty)
         {

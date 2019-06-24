@@ -8,6 +8,15 @@ namespace Sudoku.Models
 {
     class SudokuSolver
     {
+        #region Fields and Properties
 
+        public Board Board { get; }
+
+        #endregion
+
+        public SudokuSolver(Board board)
+        {
+            Board = board;
+        }
     }
 }

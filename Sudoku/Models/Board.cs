@@ -10,6 +10,8 @@ namespace Sudoku.Models
 {
     class Board
     {
+        #region Fields and Properties
+
         /// <summary>
         /// get all cells on the board
         /// </summary>
@@ -61,6 +63,8 @@ namespace Sudoku.Models
                 return BoardSize * BoardSize;
             }
         }
+
+        #endregion
 
         public Board()
         {

@@ -10,6 +10,8 @@ namespace Sudoku.Models
 {
     public class SudokuCell : ObservableObject
     {
+        #region Fields and Properties
+
         /// <summary>
         /// minimum possible value of the cell
         /// </summary>
@@ -88,15 +90,17 @@ namespace Sudoku.Models
             }
         }
 
-        public SudokuCell(int? value, bool defaultValue)
-        {
-            Value = value;
-            IsDefaultValue = defaultValue;
-        }
+        #endregion
 
         public SudokuCell()
         {
             IsDefaultValue = false;
+        }
+
+        public SudokuCell(int? value, bool defaultValue)
+        {
+            Value = value;
+            IsDefaultValue = defaultValue;
         }
 
         public override string ToString()
