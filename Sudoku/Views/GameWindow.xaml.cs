@@ -40,7 +40,7 @@ namespace Sudoku.Views
         {
             if (e.Key == Key.Enter)
             {
-                GameIC.Focus();
+                GameGrid.Focus();
             }
         }
 
@@ -67,7 +67,7 @@ namespace Sudoku.Views
         }
 
         /// <summary>
-        /// generate, set binding and show UI elements for squares
+        /// create controls, set binding and show Sudoku squares
         /// </summary>
         private void ShowSudokuSquares()
         {

@@ -37,14 +37,14 @@ namespace Sudoku
 
         private void NormalGameButton_Click(object sender, RoutedEventArgs e)
         {
-            GameWindow window = new GameWindow(GameDifficulty.Easy);
+            GameWindow window = new GameWindow(GameDifficulty.Normal);
             window.Show();
             this.Close();
         }
 
         private void HardGameButton_Click(object sender, RoutedEventArgs e)
         {
-            GameWindow window = new GameWindow(GameDifficulty.Easy);
+            GameWindow window = new GameWindow(GameDifficulty.Hard);
             window.Show();
             this.Close();
         }

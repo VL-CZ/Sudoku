@@ -91,6 +91,9 @@ namespace Sudoku.Models
             CreateSquares();
         }
 
+        /// <summary>
+        /// create Sudoku squares on the board
+        /// </summary>
         private void CreateSquares()
         {
             for (int i = 0; i < SquaresPerDimension; i++)
@@ -103,26 +106,6 @@ namespace Sudoku.Models
                 Squares.Add(row);
             }
         }
-
-        ///// <summary>
-        ///// fill board (generate sudoku) according to sudoku rules
-        ///// </summary>
-        //private void FillBoard()
-        //{
-        //    Random random = new Random();
-
-        //    for (int i = 0; i < BoardSize; i++)
-        //    {
-        //        var row = new ObservableCollection<SudokuCell>();
-
-        //        for (int j = 0; j < BoardSize; j++)
-        //        {
-        //            row.Add(new SudokuCell(random.Next(1, BoardSize + 1), true));
-        //        }
-
-        //        Cells.Add(row);
-        //    }
-        //}
 
         /// <summary>
         /// get square with specified ID, returns null if ID isn't found
@@ -144,5 +127,14 @@ namespace Sudoku.Models
             return null;
         }
 
+        public List<SudokuCell> GetRow(int order)
+        {
+            return null;
+        }
+
+        public List<SudokuCell> GetColumn(int order)
+        {
+            return null;
+        }
     }
 }
