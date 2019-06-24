@@ -1,4 +1,5 @@
-﻿using Sudoku.Models;
+﻿using Sudoku.Enums;
+using Sudoku.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace Sudoku.ViewModels
     {
         public Board Board { get; }
         public GameTimer Timer { get; }
+        private readonly GameMode difficulty;
 
         public GameVM()
         {

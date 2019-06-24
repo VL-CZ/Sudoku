@@ -65,6 +65,9 @@ namespace Sudoku.Views
             return (UIElement)XamlReader.Load(xmlReader);
         }
 
+        /// <summary>
+        /// generate, set binding and show UI elements for squares
+        /// </summary>
         private void ShowSudokuSquares()
         {
             int squareCount = gameVM.Board.BoardSize;
