@@ -27,6 +27,7 @@ namespace Sudoku.Views
             InitializeComponent();
             gameVM = new GameVM();
             DataContext = gameVM;
+            GameIC.ItemsSource = gameVM.Board.GetSquareByID(1).Cells;
         }
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
