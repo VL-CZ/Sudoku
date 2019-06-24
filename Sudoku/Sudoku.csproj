@@ -56,9 +56,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\Board.cs" />
-    <Compile Include="Models\Cell.cs" />
+    <Compile Include="Models\SudokuCell.cs" />
     <Compile Include="Models\GameTimer.cs" />
     <Compile Include="Models\ObservableObject.cs" />
+    <Compile Include="Models\SudokuGenerator.cs" />
+    <Compile Include="Models\SudokuSquare.cs" />
     <Compile Include="ViewModels\BaseVM.cs" />
     <Compile Include="ViewModels\GameVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />

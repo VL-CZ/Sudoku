@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace Sudoku.Models
 {
-    public class Cell : ObservableObject
+    public class SudokuCell : ObservableObject
     {
         /// <summary>
         /// minimum possible value of the cell
@@ -88,7 +88,7 @@ namespace Sudoku.Models
             }
         }
 
-        public Cell(int? value, bool defaultValue)
+        public SudokuCell(int? value, bool defaultValue)
         {
             Value = value;
             isDefaultValue = defaultValue;

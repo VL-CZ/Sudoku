@@ -11,7 +11,7 @@ namespace Sudoku.Models
     {
         private DispatcherTimer timer;
 
-        public int minutes = 0;
+        private int minutes = 0;
 
         public int Minutes
         {
@@ -26,7 +26,7 @@ namespace Sudoku.Models
             }
         }
 
-        public int seconds = 0;
+        private int seconds = 0;
 
         public int Seconds
         {
