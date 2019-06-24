@@ -101,7 +101,7 @@ namespace Sudoku.Models
                 var row = new ObservableCollection<SudokuSquare>();
                 for (int j = 1; j <= SquaresPerDimension; j++)
                 {
-                    row.Add(new SudokuSquare(3*i + j));
+                    row.Add(new SudokuSquare(3 * i + j));
                 }
                 Squares.Add(row);
             }
@@ -127,12 +127,22 @@ namespace Sudoku.Models
             return null;
         }
 
-        public List<SudokuCell> GetRow(int order)
+        /// <summary>
+        /// Get N-th row from the board (indexes start from 1)
+        /// </summary>
+        /// <param name="N"></param>
+        /// <returns></returns>
+        public List<SudokuCell> GetNthRow(int N)
         {
             return null;
         }
 
-        public List<SudokuCell> GetColumn(int order)
+        /// <summary>
+        /// Get N-th column from the board (indexes start from 1)
+        /// </summary>
+        /// <param name="N"></param>
+        /// <returns></returns>
+        public List<SudokuCell> GetNthColumn(int N)
         {
             return null;
         }

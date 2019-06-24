@@ -94,6 +94,11 @@ namespace Sudoku.Models
             isDefaultValue = defaultValue;
         }
 
+        public SudokuCell()
+        {
+            isDefaultValue = false;
+        }
+
         public override string ToString()
         {
             return Value.ToString();

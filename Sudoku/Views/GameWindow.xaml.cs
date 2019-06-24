@@ -40,7 +40,7 @@ namespace Sudoku.Views
         {
             if (e.Key == Key.Enter)
             {
-                GameGrid.Focus();
+                GameIC.Focus();
             }
         }
 

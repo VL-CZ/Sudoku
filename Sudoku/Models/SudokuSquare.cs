@@ -51,10 +51,20 @@ namespace Sudoku.Models
                 var row = new ObservableCollection<SudokuCell>();
                 for (int j = 1; j <= CellsInOneDimension; j++)
                 {
-                    var cellValue = values[generator.Next(values.Count)];
-                    values.Remove(cellValue);
+                    int isGenerated = generator.Next(0, 2);
+                    SudokuCell cell;
 
-                    SudokuCell cell = new SudokuCell(cellValue, true);
+                    if (isGenerated == 0)
+                    {
+                        cell = new SudokuCell();
+                    }
+                    else
+                    {
+                        int cellValue = values[generator.Next(values.Count)];
+                        values.Remove(cellValue);
+
+                        cell = new SudokuCell(cellValue, true);
+                    }
                     row.Add(cell);
                 }
                 Cells.Add(row);
