@@ -8,5 +8,11 @@ namespace Sudoku.Models
 {
     class SudokuGenerator
     {
+        public Board Board { get; }
+
+        public SudokuGenerator(Board board)
+        {
+            Board = board;
+        }
     }
 }

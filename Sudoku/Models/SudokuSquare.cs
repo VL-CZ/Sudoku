@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sudoku.Enums;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -38,6 +39,9 @@ namespace Sudoku.Models
             this.numberOfCells = numberOfCells;
         }
 
+        /// <summary>
+        /// fill square with values 1-9 (each value is used once)
+        /// </summary>
         private void GenerateCellValues()
         {
             var values = new List<int>();
@@ -69,6 +73,57 @@ namespace Sudoku.Models
                 }
                 Cells.Add(row);
             }
+        }
+
+        /// <summary>
+        /// returns number of non-empty cells 
+        /// </summary>
+        /// <returns></returns>
+        public int FilledCells()
+        {
+            int count = 0;
+
+            for (int i = 0; i < CellsInOneDimension; i++)
+            {
+                for (int j = 0; j < CellsInOneDimension; j++)
+                {
+                    if (Cells[i][j].Value != null)
+                    {
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
+
+        /// <summary>
+        /// get all cells in N-th row or column
+        /// </summary>
+        /// <param name="N"></param>
+        /// <param name="selectionType">Row/column</param>
+        /// <returns></returns>
+        public List<SudokuCell> GetNThRowOrColumn(int N, SelectionType selectionType)
+        {
+            if (N < 0 || N >= CellsInOneDimension)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            var list = new List<SudokuCell>();
+            for (int i = 0; i < CellsInOneDimension; i++)
+            {
+                switch (selectionType)
+                {
+                    case SelectionType.Row:
+                        list.Add(Cells[N][i]);
+                        break;
+                    case SelectionType.Column:
+                        list.Add(Cells[i][N]);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return list;
         }
     }
 }

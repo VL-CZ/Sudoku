@@ -60,18 +60,10 @@ namespace Sudoku.Models
             }
         }
 
-        private readonly bool isDefaultValue;
-
         /// <summary>
         /// is this value default? (player can't change it)
         /// </summary>
-        public bool IsDefaultValue
-        {
-            get
-            {
-                return isDefaultValue;
-            }
-        }
+        public bool IsDefaultValue { get; }
 
         private Brush background;
 
@@ -99,12 +91,12 @@ namespace Sudoku.Models
         public SudokuCell(int? value, bool defaultValue)
         {
             Value = value;
-            isDefaultValue = defaultValue;
+            IsDefaultValue = defaultValue;
         }
 
         public SudokuCell()
         {
-            isDefaultValue = false;
+            IsDefaultValue = false;
         }
 
         public override string ToString()

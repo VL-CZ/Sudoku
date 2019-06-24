@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Enums\GameDifficulty.cs" />
+    <Compile Include="Enums\SelectionType.cs" />
     <Compile Include="Models\Board.cs" />
     <Compile Include="Models\SudokuCell.cs" />
     <Compile Include="Models\GameTimer.cs" />

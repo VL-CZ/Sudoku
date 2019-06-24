@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sudoku.Enums;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -16,39 +17,16 @@ namespace Sudoku.Models
         {
             get
             {
-                //var listOfCells = new ObservableCollection<ObservableCollection<SudokuCell>>();
+                var cells = new ObservableCollection<ObservableCollection<SudokuCell>>();
+                for (int i = 0; i < BoardSize; i++)
+                {
+                    var listRow = GetNthRow(i);
+                    var OC_row = new ObservableCollection<SudokuCell>();
 
-                //// select 3 squares in the same row
-                //for (int i = 1; i <= BoardSize - 2; i += 3)
-                //{
-                //    var squares = new List<SudokuSquare>();
-
-                //    for (int j = 0; j < SquaresPerDimension; j++)
-                //    {
-                //        squares.Add(GetSquareByID(i + j));
-                //    }
-
-                //    var rows = new ObservableCollection<ObservableCollection<SudokuCell>>();
-
-                //    // loop through the squares
-                //    for (int j = 0; j < SquaresPerDimension; j++)
-                //    {
-                //        var row = new ObservableCollection<SudokuCell>();
-
-                //        // iterate through rows in the square
-                //        for (int r = 0; r < SquaresPerDimension; r++)
-                //        {
-
-                //        }
-                //    }
-
-                //    foreach (var row in rows)
-                //    {
-                //        listOfCells.Add(row);
-                //    }
-                //}
-                //return listOfCells;
-                return null;
+                    listRow.ForEach(cell => OC_row.Add(cell));
+                    cells.Add(OC_row);
+                }
+                return cells;
             }
         }
 
@@ -128,23 +106,69 @@ namespace Sudoku.Models
         }
 
         /// <summary>
-        /// Get N-th row from the board (indexes start from 1)
+        /// Get N-th row from the board (row indexes start from 0)
         /// </summary>
         /// <param name="N"></param>
         /// <returns></returns>
         public List<SudokuCell> GetNthRow(int N)
         {
-            return null;
+            int squareRowIndex = N / SquaresPerDimension;
+            int innerRowIndex = N % SquaresPerDimension;
+
+            if (squareRowIndex < 0 || squareRowIndex >= SquaresPerDimension)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
+            int squareID = (squareRowIndex - 1) * SquaresPerDimension + 1;
+
+            var rowSquares = new List<SudokuSquare>();
+
+            // add all squares in the selected row to list
+            for (int i = 0; i < SquaresPerDimension; i++)
+            {
+                rowSquares.Add(GetSquareByID(squareID + i));
+            }
+
+            var row = new List<SudokuCell>();
+            foreach (SudokuSquare square in rowSquares)
+            {
+                row.AddRange(square.GetNThRowOrColumn(innerRowIndex, SelectionType.Row));
+            }
+
+            return row;
         }
 
         /// <summary>
-        /// Get N-th column from the board (indexes start from 1)
+        /// Get N-th column from the board (indexes start from 0)
         /// </summary>
         /// <param name="N"></param>
         /// <returns></returns>
         public List<SudokuCell> GetNthColumn(int N)
         {
-            return null;
+            int squareColIndex = N / SquaresPerDimension;
+            int innerColumnIndex = N % SquaresPerDimension;
+
+            if (squareColIndex < 0 || squareColIndex >= SquaresPerDimension)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
+            int squareID = squareColIndex + 1;
+
+            var colSquares = new List<SudokuSquare>();
+            for (int i = squareID; i <= CellCount; i += SquaresPerDimension)
+            {
+                colSquares.Add(GetSquareByID(i));
+            }
+
+            var column = new List<SudokuCell>();
+            foreach (SudokuSquare square in colSquares)
+            {
+                column.AddRange(square.GetNThRowOrColumn(innerColumnIndex, SelectionType.Column));
+            }
+
+            return column;
         }
     }
 }
