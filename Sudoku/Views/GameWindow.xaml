@@ -10,7 +10,8 @@
     <Window.Resources>
         <DataTemplate x:Key="DataTemplate_Level2">
             <TextBox Text="{Binding Value}" Height="50" Width="50" BorderThickness="0.5" BorderBrush="Black" Background="{Binding Background}"
-                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" KeyDown="TextBox_KeyDown" />
+                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" KeyDown="TextBox_KeyDown" 
+                    IsReadOnly="{Binding IsDefaultValue}" />
         </DataTemplate>
 
         <DataTemplate x:Key="DataTemplate_Level1">
@@ -42,24 +43,25 @@
             </TextBlock>
         </StackPanel>
 
-        <!-- Game grid -->
-        <Grid Name="GameGrid" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+        <Border BorderBrush="Black" BorderThickness="10" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <!-- Game grid -->
+            <Grid Name="GameGrid" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-            <ItemsControl Name="GameIC" Grid.Column="0" ItemTemplate="{DynamicResource DataTemplate_Level1}"
+                <ItemsControl Name="GameIC" Grid.Column="0" ItemTemplate="{DynamicResource DataTemplate_Level1}"
                       VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="2" BorderBrush="Black" />
-            
-        </Grid>
 
+            </Grid>
+        </Border>
         <Button Content="Quit Game" Name="QuitGameButton" Click="QuitGameButton_Click" Grid.Row="2"></Button>
         <!--<StackPanel Orientation="Vertical" Name="WinnerTextBlock" Visibility="Hidden" Grid.Row="2">
             <TextBlock Style="{StaticResource NormalText}">

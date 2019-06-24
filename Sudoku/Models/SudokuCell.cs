@@ -52,7 +52,7 @@ namespace Sudoku.Models
             set
             {
                 int? val = value;
-                if (isDefaultValue == false && (val == null) || (val >= minValue && val <= maxValue))
+                if (IsDefaultValue == false && (val == null) || (val >= minValue && val <= maxValue))
                 {
                     this.value = val;
                 }
@@ -60,10 +60,18 @@ namespace Sudoku.Models
             }
         }
 
+        private readonly bool isDefaultValue;
+
         /// <summary>
         /// is this value default? (player can't change it)
         /// </summary>
-        private readonly bool isDefaultValue;
+        public bool IsDefaultValue
+        {
+            get
+            {
+                return isDefaultValue;
+            }
+        }
 
         private Brush background;
 
@@ -74,7 +82,7 @@ namespace Sudoku.Models
         {
             get
             {
-                if (isDefaultValue)
+                if (IsDefaultValue)
                 {
                     return Brushes.LightGray;
                 }

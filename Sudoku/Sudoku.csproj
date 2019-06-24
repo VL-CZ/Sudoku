@@ -61,6 +61,7 @@
     <Compile Include="Models\GameTimer.cs" />
     <Compile Include="Models\ObservableObject.cs" />
     <Compile Include="Models\SudokuGenerator.cs" />
+    <Compile Include="Models\SudokuSolver.cs" />
     <Compile Include="Models\SudokuSquare.cs" />
     <Compile Include="ViewModels\BaseVM.cs" />
     <Compile Include="ViewModels\GameVM.cs" />
