@@ -1,4 +1,5 @@
-﻿using Sudoku.ViewModels;
+﻿using Sudoku.Enums;
+using Sudoku.ViewModels;
 using Sudoku.Views;
 using System;
 using System.Collections.Generic;
@@ -29,19 +30,23 @@ namespace Sudoku
 
         private void EasyGameButton_Click(object sender, RoutedEventArgs e)
         {
-            GameWindow window = new GameWindow();
+            GameWindow window = new GameWindow(GameDifficulty.Easy);
             window.Show();
             this.Close();
         }
 
-        private void MediumGameButton_Click(object sender, RoutedEventArgs e)
+        private void NormalGameButton_Click(object sender, RoutedEventArgs e)
         {
-
+            GameWindow window = new GameWindow(GameDifficulty.Easy);
+            window.Show();
+            this.Close();
         }
 
         private void HardGameButton_Click(object sender, RoutedEventArgs e)
         {
-
+            GameWindow window = new GameWindow(GameDifficulty.Easy);
+            window.Show();
+            this.Close();
         }
 
         private void CloseAppButton_Click(object sender, RoutedEventArgs e)

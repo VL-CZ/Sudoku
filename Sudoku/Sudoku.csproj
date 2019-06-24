@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Enums\GameMode.cs" />
+    <Compile Include="Enums\GameDifficulty.cs" />
     <Compile Include="Models\Board.cs" />
     <Compile Include="Models\SudokuCell.cs" />
     <Compile Include="Models\GameTimer.cs" />

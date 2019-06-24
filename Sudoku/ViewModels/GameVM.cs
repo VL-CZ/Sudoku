@@ -12,10 +12,11 @@ namespace Sudoku.ViewModels
     {
         public Board Board { get; }
         public GameTimer Timer { get; }
-        private readonly GameMode difficulty;
+        private readonly GameDifficulty difficulty;
 
-        public GameVM()
+        public GameVM(GameDifficulty difficulty)
         {
+            this.difficulty = difficulty;
             Board = new Board();
             Timer = new GameTimer();
         }

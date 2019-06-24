@@ -17,7 +17,7 @@
             <TextBlock Style="{StaticResource NormalText}">Play:</TextBlock>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
                 <Button Content="Easy" Name="EasyGameButton" Click="EasyGameButton_Click"></Button>
-                <Button Content="Medium" Name="MediumGameButton" Click="MediumGameButton_Click"></Button>
+                <Button Content="Normal" Name="NormalGameButton" Click="NormalGameButton_Click"></Button>
                 <Button Content="Hard" Name="HardGameButton" Click="HardGameButton_Click"></Button>
             </StackPanel>
         </StackPanel>

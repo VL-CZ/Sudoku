@@ -6,5 +6,8 @@ using System.Threading.Tasks;
 
 namespace Sudoku.Enums
 {
-    public enum GameMode { Easy, Medium, Hard }
+    /// <summary>
+    /// difficulty of the sudoku
+    /// </summary>
+    public enum GameDifficulty { Easy, Normal, Hard }
 }

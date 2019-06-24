@@ -1,4 +1,5 @@
-﻿using Sudoku.Models;
+﻿using Sudoku.Enums;
+using Sudoku.Models;
 using Sudoku.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -26,10 +27,10 @@ namespace Sudoku.Views
     {
         private GameVM gameVM;
 
-        public GameWindow()
+        public GameWindow(GameDifficulty difficulty)
         {
             InitializeComponent();
-            gameVM = new GameVM();
+            gameVM = new GameVM(difficulty);
             DataContext = gameVM;
 
             ShowSudokuSquares();
