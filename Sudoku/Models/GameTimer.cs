@@ -9,10 +9,16 @@ namespace Sudoku.Models
 {
     internal class GameTimer : ObservableObject
     {
+        /// <summary>
+        /// instance of timer
+        /// </summary>
         private DispatcherTimer timer;
 
         private int minutes = 0;
-
+        
+        /// <summary>
+        /// elapsed minutes
+        /// </summary>
         public int Minutes
         {
             get
@@ -28,6 +34,9 @@ namespace Sudoku.Models
 
         private int seconds = 0;
 
+        /// <summary>
+        /// elapsed seconds since last completed minute
+        /// </summary>
         public int Seconds
         {
             get
@@ -53,11 +62,19 @@ namespace Sudoku.Models
             timer.Start();
         }
 
+        /// <summary>
+        /// method that is invoked on timer_tick event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DispatcherTimer_Tick(object sender, EventArgs e)
         {
             Seconds++;
         }
 
+        /// <summary>
+        /// stop measuring time
+        /// </summary>
         public void StopTimer()
         {
             timer.Stop();
