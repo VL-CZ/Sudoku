@@ -9,7 +9,7 @@ namespace Sudoku.Models
 {
     class SudokuSquare
     {
-        private Random generator = new Random();
+        private static Random generator = new Random();
 
         private readonly int numberOfCells = 9;
 

@@ -13,7 +13,7 @@ namespace Sudoku.Models
         /// <summary>
         /// minimum possible value of the cell
         /// </summary>
-        private static readonly int minValue = 0;
+        private static readonly int minValue = 1;
 
         /// <summary>
         /// maximum possible value of the cell

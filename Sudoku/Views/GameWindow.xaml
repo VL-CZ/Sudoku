@@ -24,6 +24,7 @@
         </DataTemplate>
     </Window.Resources>
 
+    <!-- Main grid -->
     <Grid Margin="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
@@ -31,6 +32,7 @@
             <RowDefinition Height="60" />
         </Grid.RowDefinitions>
 
+        <!-- Time -->
         <StackPanel Orientation="Horizontal" Grid.Row="0">
             <TextBlock Style="{StaticResource NormalText}">
                 <Run Text="Time: " />
@@ -40,8 +42,23 @@
             </TextBlock>
         </StackPanel>
 
-        <ItemsControl Name="GameIC" Grid.Row="1" ItemsSource="{Binding Board.Squares}" ItemTemplate="{DynamicResource DataTemplate_Level1}"
-                      VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="5" BorderBrush="Black" />
+        <!-- Game grid -->
+        <Grid Name="GameGrid" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <ItemsControl Name="GameIC" Grid.Column="0" ItemTemplate="{DynamicResource DataTemplate_Level1}"
+                      VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="2" BorderBrush="Black" />
+            
+        </Grid>
 
         <Button Content="Quit Game" Name="QuitGameButton" Click="QuitGameButton_Click" Grid.Row="2"></Button>
         <!--<StackPanel Orientation="Vertical" Name="WinnerTextBlock" Visibility="Hidden" Grid.Row="2">
