@@ -5,5 +5,8 @@ using System.Text;
 
 namespace Sudoku.Enums
 {
+    /// <summary>
+    /// type of selected area (row/column)
+    /// </summary>
     public enum SelectionType { Row, Column}
 }

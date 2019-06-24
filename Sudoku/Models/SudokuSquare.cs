@@ -12,12 +12,24 @@ namespace Sudoku.Models
     {
         #region Fields and Properties
 
+        /// <summary>
+        /// number generator
+        /// </summary>
         private static Random generator = new Random();
 
+        /// <summary>
+        /// number of cells in the square
+        /// </summary>
         private readonly int numberOfCells = 9;
 
+        /// <summary>
+        /// id of the square
+        /// </summary>
         public int Id { get; }
 
+        /// <summary>
+        /// number of cells in one dimension
+        /// </summary>
         public int CellsInOneDimension
         {
             get
@@ -26,6 +38,9 @@ namespace Sudoku.Models
             }
         }
 
+        /// <summary>
+        /// all cells in the square
+        /// </summary>
         public ObservableCollection<ObservableCollection<SudokuCell>> Cells { get; }
 
         #endregion
