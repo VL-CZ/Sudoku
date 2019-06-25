@@ -44,6 +44,20 @@ namespace Sudoku.Models
         /// </summary>
         public ObservableCollection<ObservableCollection<SudokuCell>> Cells { get; }
 
+        /// <summary>
+        /// get cell in seleted row and column
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="column"></param>
+        /// <returns></returns>
+        public SudokuCell this[int row, int column]
+        {
+            get
+            {
+                return Cells[row][column];
+            }
+        }
+
         #endregion
 
         public SudokuSquare(int id)

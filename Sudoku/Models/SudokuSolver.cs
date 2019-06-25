@@ -100,7 +100,7 @@ namespace Sudoku.Models
             var position = Board.GetPosition(selectedCell);
 
             selectedCell.Value = sudokuSolutionValues[position.Item1][position.Item2].ToString();
-            //emptyCells[index].Value = SudokuGenerator.SolutionValue(index).ToString();
+
         }
 
         /// <summary>

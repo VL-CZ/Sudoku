@@ -7,10 +7,13 @@
         mc:Ignorable="d"
         Title="WinnerWindow" Height="150" Width="200" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
+        
+        <!-- Main content -->
         <StackPanel Orientation="Vertical">
             <TextBlock Style="{StaticResource LargeText}">Solved</TextBlock>
             <TextBlock HorizontalAlignment="Center" Name="TimeTextBlock"></TextBlock>
             <Button Name="CloseButtonClick" Click="CloseButtonClick_Click" Content="OK"></Button>
         </StackPanel>
+    
     </Grid>
 </Window>
