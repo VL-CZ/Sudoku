@@ -91,5 +91,11 @@ namespace Sudoku.Views
 
             GameIC.ItemsSource = gameVM.Board.GetSquareByID(1).Cells;
         }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            gameVM.Solver.IsSolved();
+            var x = gameVM.Board.Cells;
+        }
     }
 }

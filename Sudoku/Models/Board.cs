@@ -22,7 +22,7 @@ namespace Sudoku.Models
                 var cells = new List<List<SudokuCell>>();
                 for (int i = 0; i < BoardSize; i++)
                 {
-                    cells.Add(GetNthRow(i));
+                    cells.Add(GetNthColumn(i));
                 }
                 return cells;
             }
@@ -135,7 +135,7 @@ namespace Sudoku.Models
                 throw new IndexOutOfRangeException();
             }
 
-            int squareID = (squareRowIndex - 1) * SquaresPerDimension + 1;
+            int squareID = squareRowIndex * SquaresPerDimension + 1;
 
             var rowSquares = new List<SudokuSquare>();
 
@@ -172,7 +172,7 @@ namespace Sudoku.Models
             int squareID = squareColIndex + 1;
 
             var colSquares = new List<SudokuSquare>();
-            for (int i = squareID; i <= CellCount; i += SquaresPerDimension)
+            for (int i = squareID; i <= BoardSize; i += SquaresPerDimension)
             {
                 colSquares.Add(GetSquareByID(i));
             }

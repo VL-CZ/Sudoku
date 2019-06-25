@@ -10,6 +10,9 @@ namespace Sudoku.Models
     {
         #region Fields and Properties
 
+        /// <summary>
+        /// board with sudoku
+        /// </summary>
         public Board Board { get; }
 
         #endregion

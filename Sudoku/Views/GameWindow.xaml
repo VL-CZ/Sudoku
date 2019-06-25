@@ -11,7 +11,7 @@
         <DataTemplate x:Key="DataTemplate_Level2">
             <TextBox Text="{Binding Value}" Height="50" Width="50" BorderThickness="0.5" BorderBrush="Black" Background="{Binding Background}"
                     HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" KeyDown="TextBox_KeyDown" 
-                    IsReadOnly="{Binding IsDefaultValue}" />
+                    IsReadOnly="{Binding IsDefaultValue}" LostFocus="TextBox_LostFocus" />
         </DataTemplate>
 
         <DataTemplate x:Key="DataTemplate_Level1">

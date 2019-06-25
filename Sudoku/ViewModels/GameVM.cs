@@ -20,12 +20,12 @@ namespace Sudoku.ViewModels
         /// <summary>
         /// sudoku generator
         /// </summary>
-        private readonly SudokuGenerator generator;
+        private SudokuGenerator Generator { get; }
 
         /// <summary>
         /// tool used for hints and detecting boxes with wrong value
         /// </summary>
-        public readonly SudokuSolver solver;
+        public SudokuSolver Solver { get; }
 
         /// <summary>
         /// sudoku board
@@ -44,8 +44,8 @@ namespace Sudoku.ViewModels
             this.difficulty = difficulty;
             Board = new Board();
             Timer = new GameTimer();
-            generator = new SudokuGenerator(Board);
-            solver = new SudokuSolver(Board);
+            Generator = new SudokuGenerator(Board);
+            Solver = new SudokuSolver(Board);
         }
     }
 }
