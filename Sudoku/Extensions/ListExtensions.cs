@@ -18,7 +18,7 @@ namespace Sudoku.Extensions
         {
             var values = sudokuCells.Select(cell => cell.Value);
 
-            for (int i = 1; i <= 9; i++)
+            for (int i = 1; i <= sudokuCells.Count; i++)
             {
                 if (!values.Contains(i.ToString()))
                 {
