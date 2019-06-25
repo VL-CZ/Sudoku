@@ -88,14 +88,14 @@ namespace Sudoku.Models
         /// </summary>
         private void CreateSquares()
         {
-            for (int i = 0; i < Board.SquaresPerDimension; i++)
+            for (int i = 0; i < SquaresPerDimension; i++)
             {
                 var row = new ObservableCollection<SudokuSquare>();
-                for (int j = 1; j <= Board.SquaresPerDimension; j++)
+                for (int j = 1; j <= SquaresPerDimension; j++)
                 {
                     row.Add(new SudokuSquare(3 * i + j));
                 }
-                Board.Squares.Add(row);
+                Squares.Add(row);
             }
         }
 
