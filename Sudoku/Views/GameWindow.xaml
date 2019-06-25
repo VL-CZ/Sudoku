@@ -35,7 +35,7 @@
 
         <!-- Time -->
         <StackPanel Orientation="Horizontal" Grid.Row="0">
-            <TextBlock Style="{StaticResource NormalText}">
+            <TextBlock Style="{StaticResource NormalText}" Name="TimeTextBlock">
                 <Run Text="Time: " />
                 <Run Text="{Binding Timer.Minutes}" />
                 <Run Text=":" />

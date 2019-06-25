@@ -111,8 +111,9 @@ namespace Sudoku.Views
         {     
             if (gameVM.Solver.IsSolved())
             {
-                MessageBox.Show("SOLVED!");
                 gameVM.Timer.StopTimer();
+                WinnerWindow window = new WinnerWindow(TimeTextBlock.Text);
+                window.Show();
             }
         }
 

@@ -41,7 +41,7 @@ namespace Sudoku.Models
             {
                 for (int j = 0; j < Board.Size; j++)
                 {
-                    if (Board[i, j].Value != sudokuSolutionValues[i][j].ToString())
+                    if (!Board[i, j].IsEmpty() && Board[i, j].Value != sudokuSolutionValues[i][j].ToString())
                     {
                         incorrectValues.Add(Board[i, j]);
                     }
@@ -55,6 +55,11 @@ namespace Sudoku.Models
         /// </summary>
         public void ShowWrongValues()
         {
+            foreach (SudokuCell cell in Board.GetAllCells())
+            {
+                cell.RemoveHighlight();
+            }
+
             var incorrectCells = GetWrongValues();
             foreach (SudokuCell cell in incorrectCells)
             {
