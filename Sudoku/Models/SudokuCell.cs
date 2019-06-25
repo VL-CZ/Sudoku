@@ -22,6 +22,11 @@ namespace Sudoku.Models
         /// </summary>
         public const int maxValue = 9;
 
+        /// <summary>
+        /// is this cell highlighted?
+        /// </summary>
+        private bool isHighlighted = false;
+
         private string value;
 
         /// <summary>
@@ -35,7 +40,7 @@ namespace Sudoku.Models
             }
             set
             {
-                string stringValue = value;
+                string stringValue = value.Trim();
                 if (IsDefaultValue == false && (string.IsNullOrEmpty(stringValue) ||
                     (int.TryParse(stringValue, out int intValue) && intValue >= minValue && intValue <= maxValue)))
                 {
@@ -59,14 +64,18 @@ namespace Sudoku.Models
         {
             get
             {
-                if (IsDefaultValue)
+                if (isHighlighted)
+                {
+                    return background;
+                }
+                else if (IsDefaultValue)
                 {
                     return Brushes.LightGray;
                 }
                 else
                     return Brushes.WhiteSmoke;
             }
-            set
+            private set
             {
                 background = value;
                 RaisePropertyChanged();
@@ -77,8 +86,8 @@ namespace Sudoku.Models
 
         public SudokuCell()
         {
-            IsDefaultValue = false;
             Value = "";
+            IsDefaultValue = false;
         }
 
         public SudokuCell(int? value, bool defaultValue)
@@ -94,6 +103,18 @@ namespace Sudoku.Models
         public bool IsEmpty()
         {
             return String.IsNullOrEmpty(Value);
+        }
+
+        public void HighLight()
+        {
+            isHighlighted = true;
+            Background = Brushes.Red;
+        }
+
+        public void RemoveHighlight()
+        {
+            isHighlighted = false;
+            RaisePropertyChanged(nameof(Background));
         }
 
         public override string ToString()

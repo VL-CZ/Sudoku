@@ -81,7 +81,7 @@ namespace Sudoku.Views
         /// </summary>
         private void ShowSudokuSquares()
         {
-            int squareCount = gameVM.Board.BoardSize;
+            int squareCount = gameVM.Board.Size;
             var sudokuSquares = new List<SudokuSquare>();
 
             for (int i = 2; i <= squareCount; i++)
@@ -114,6 +114,16 @@ namespace Sudoku.Views
                 MessageBox.Show("SOLVED!");
                 gameVM.Timer.StopTimer();
             }
+        }
+
+        private void ShowWrongValuesButton_Click(object sender, RoutedEventArgs e)
+        {
+            gameVM.Solver.ShowWrongValues();
+        }
+
+        private void ClearWrongButton_Click(object sender, RoutedEventArgs e)
+        {
+            gameVM.Solver.ClearWrongValues();
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Sudoku.Models
             get
             {
                 var cells = new List<List<SudokuCell>>();
-                for (int i = 0; i < BoardSize; i++)
+                for (int i = 0; i < Size; i++)
                 {
                     cells.Add(GetNthColumn(i));
                 }
@@ -36,7 +36,7 @@ namespace Sudoku.Models
         /// <summary>
         /// get size of the board (number of cells in 1 dimension) - also number of cells in each square and number of squares on the board
         /// </summary>
-        public int BoardSize { get; } = 9;
+        public int Size { get; } = 9;
 
         /// <summary>
         /// number of squares per 1 dimension (also number of cells in square per 1 dimension )
@@ -45,7 +45,7 @@ namespace Sudoku.Models
         {
             get
             {
-                return (int)Math.Sqrt(BoardSize);
+                return (int)Math.Sqrt(Size);
             }
         }
 
@@ -56,7 +56,7 @@ namespace Sudoku.Models
         {
             get
             {
-                return BoardSize * BoardSize;
+                return Size * Size;
             }
         }
 
@@ -171,7 +171,7 @@ namespace Sudoku.Models
             int squareID = squareColIndex + 1;
 
             var colSquares = new List<SudokuSquare>();
-            for (int i = squareID; i <= BoardSize; i += SquaresPerDimension)
+            for (int i = squareID; i <= Size; i += SquaresPerDimension)
             {
                 colSquares.Add(GetSquareByID(i));
             }
@@ -234,7 +234,7 @@ namespace Sudoku.Models
             var row1Cells = GetNthRow(row1);
             var row2Cells = GetNthRow(row2);
 
-            for (int i = 0; i < BoardSize; i++)
+            for (int i = 0; i < Size; i++)
             {
                 SwapCellValues(row1Cells[i], row2Cells[i]);
             }
@@ -250,7 +250,7 @@ namespace Sudoku.Models
             var col1Cells = GetNthColumn(col1);
             var col2Cells = GetNthColumn(col2);
 
-            for (int i = 0; i < BoardSize; i++)
+            for (int i = 0; i < Size; i++)
             {
                 SwapCellValues(col1Cells[i], col2Cells[i]);
             }
@@ -287,9 +287,9 @@ namespace Sudoku.Models
         /// </summary>
         public void Transponse()
         {
-            for (int i = 0; i < BoardSize; i++)
+            for (int i = 0; i < Size; i++)
             {
-                for (int j = 0; j < BoardSize; j++)
+                for (int j = 0; j < Size; j++)
                 {
                     if (i > j)
                     {

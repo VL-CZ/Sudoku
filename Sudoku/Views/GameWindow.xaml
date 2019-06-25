@@ -62,7 +62,11 @@
 
             </Grid>
         </Border>
-        <Button Content="Quit Game" Name="QuitGameButton" Click="QuitGameButton_Click" Grid.Row="2"></Button>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2">
+            <Button Content="Show wrong" Name="ShowWrongButton" Click="ShowWrongValuesButton_Click"></Button>
+            <Button Content="Clear wrong" Name="ClearWrongButton" Click="ClearWrongButton_Click"></Button>
+            <Button Content="Quit Game" Name="QuitGameButton" Click="QuitGameButton_Click"></Button>
+        </StackPanel>
         <!--<StackPanel Orientation="Vertical" Name="WinnerTextBlock" Visibility="Hidden" Grid.Row="2">
             <TextBlock Style="{StaticResource NormalText}">
                 <Run Text="Winner: " />

@@ -60,7 +60,7 @@ namespace Sudoku.Models
         {
             completeSudokuValues = ListExtensions.GetValidCompletedSudoku();
 
-            for (int i = 1; i <= Board.BoardSize; i++)
+            for (int i = 1; i <= Board.Size; i++)
             {
                 Board.GetSquareByID(i).FillWithValues(completeSudokuValues[i - 1]);
             }
@@ -100,6 +100,26 @@ namespace Sudoku.Models
                         break;
                 }
             }
+
+            GetSolvedSudokuValues();
+        }
+
+        /// <summary>
+        /// get solved sudoku values
+        /// </summary>
+        public List<List<int>> GetSolvedSudokuValues()
+        {
+            var solvedSudokuValues = new List<List<int>>();
+            for (int i = 0; i < Board.Size; i++)
+            {
+                var row = new List<int>();
+                for (int j = 0; j < Board.Size; j++)
+                {
+                    row.Add(int.Parse(Board[i, j].Value));
+                }
+                solvedSudokuValues.Add(row);
+            }
+            return solvedSudokuValues;
         }
 
         /// <summary>
