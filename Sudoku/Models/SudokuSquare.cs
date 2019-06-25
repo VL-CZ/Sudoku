@@ -151,12 +151,7 @@ namespace Sudoku.Models
         /// <returns></returns>
         public List<SudokuCell> GetAllCells()
         {
-            var allCells = new List<SudokuCell>();
-            for (int i = 0; i < CellsInOneDimension; i++)
-            {
-                allCells.AddRange(GetNThRowOrColumn(i, SelectionType.Row));
-            }
-            return allCells;
+            return Cells.SelectMany(x => x).ToList();
         }
     }
 }

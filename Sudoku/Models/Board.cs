@@ -192,16 +192,16 @@ namespace Sudoku.Models
         /// <returns></returns>
         public List<SudokuSquare> GetAllSquares()
         {
-            var squares = new List<SudokuSquare>();
+            return Squares.SelectMany(x => x).ToList();
+        }
 
-            for (int i = 0; i < SquaresPerDimension; i++)
-            {
-                for (int j = 0; j < SquaresPerDimension; j++)
-                {
-                    squares.Add(Squares[i][j]);
-                }
-            }
-            return squares;
+        /// <summary>
+        /// get all squares on the board in 1-dimensional list
+        /// </summary>
+        /// <returns></returns>
+        public List<SudokuCell> GetAllCells()
+        {
+            return Cells.SelectMany(x => x).ToList();
         }
 
     }
