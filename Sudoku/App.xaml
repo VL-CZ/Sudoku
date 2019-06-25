@@ -23,6 +23,12 @@
             <Setter Property="FontSize" Value="15" />
         </Style>
 
+        <!-- TextBlock.LargeText -->
+        <Style TargetType="TextBlock" x:Key="LargeText">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="25" />
+        </Style>
+
         <!-- Button -->
         <Style TargetType="Button">
             <Setter Property="Height" Value="30" />

@@ -8,7 +8,7 @@
         Title="WinnerWindow" Height="150" Width="200" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
         <StackPanel Orientation="Vertical">
-            <TextBlock Style="{StaticResource NormalText}">Solved</TextBlock>
+            <TextBlock Style="{StaticResource LargeText}">Solved</TextBlock>
             <TextBlock Name="TimeTextBlock"></TextBlock>
             <Button Name="CloseButtonClick" Click="CloseButtonClick_Click" Content="OK"></Button>
         </StackPanel>

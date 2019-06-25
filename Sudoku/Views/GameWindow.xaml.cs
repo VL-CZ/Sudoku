@@ -126,5 +126,10 @@ namespace Sudoku.Views
         {
             gameVM.Solver.ClearWrongValues();
         }
+
+        private void ShowHintButton_Click(object sender, RoutedEventArgs e)
+        {
+            gameVM.Solver.ShowHint();
+        }
     }
 }

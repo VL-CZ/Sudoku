@@ -105,16 +105,30 @@ namespace Sudoku.Models
             return String.IsNullOrEmpty(Value);
         }
 
+        /// <summary>
+        /// hightlight this cell (set background to red)
+        /// </summary>
         public void HighLight()
         {
             isHighlighted = true;
             Background = Brushes.Red;
         }
 
+        /// <summary>
+        /// remove highlight
+        /// </summary>
         public void RemoveHighlight()
         {
             isHighlighted = false;
             RaisePropertyChanged(nameof(Background));
+        }
+
+        /// <summary>
+        /// clear value of this cell
+        /// </summary>
+        public void ClearValue()
+        {
+            Value = "";
         }
 
         public override string ToString()

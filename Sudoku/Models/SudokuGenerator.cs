@@ -24,6 +24,21 @@ namespace Sudoku.Models
         private const int maxrowOrColumnSwaps = 100;
 
         /// <summary>
+        /// number of removed values in easy difficulty
+        /// </summary>
+        private const int removedEasyValues = 30;
+
+        /// <summary>
+        /// number of removed values in normal difficulty
+        /// </summary>
+        private const int removedNormalValues = 40;
+
+        /// <summary>
+        /// number of removed values in hard difficulty
+        /// </summary>
+        private const int removedHardValues= 50;
+
+        /// <summary>
         /// number generator
         /// </summary>
         private readonly static Random generator = new Random();
@@ -43,6 +58,11 @@ namespace Sudoku.Models
         /// </summary>
         public Board Board { get; }
 
+        /// <summary>
+        /// solved sudoku values
+        /// </summary>
+        public List<List<int>> SolvedSudokuValues { get; }
+
         #endregion
 
         public SudokuGenerator(Board board, GameDifficulty gameDifficulty)
@@ -51,6 +71,20 @@ namespace Sudoku.Models
             Board = board;
             completeSudokuValues = new List<List<int>>();
             GetValidCompleteSudoku();
+
+            // set SolvedSudokuValues
+            SolvedSudokuValues = new List<List<int>>();
+            for (int i = 0; i < Board.Size; i++)
+            {
+                var row = new List<int>();
+                for (int j = 0; j < Board.Size; j++)
+                {
+                    row.Add(int.Parse(Board[i, j].Value));
+                }
+                SolvedSudokuValues.Add(row);
+            }
+
+            RemoveValues();
         }
 
         /// <summary>
@@ -100,26 +134,6 @@ namespace Sudoku.Models
                         break;
                 }
             }
-
-            GetSolvedSudokuValues();
-        }
-
-        /// <summary>
-        /// get solved sudoku values
-        /// </summary>
-        public List<List<int>> GetSolvedSudokuValues()
-        {
-            var solvedSudokuValues = new List<List<int>>();
-            for (int i = 0; i < Board.Size; i++)
-            {
-                var row = new List<int>();
-                for (int j = 0; j < Board.Size; j++)
-                {
-                    row.Add(int.Parse(Board[i, j].Value));
-                }
-                solvedSudokuValues.Add(row);
-            }
-            return solvedSudokuValues;
         }
 
         /// <summary>
@@ -127,7 +141,32 @@ namespace Sudoku.Models
         /// </summary>
         private void RemoveValues()
         {
+            int removedValues = 0;
 
+            switch (difficulty)
+            {
+                case GameDifficulty.Easy:
+                    removedValues = removedEasyValues;
+                    break;
+                case GameDifficulty.Normal:
+                    removedValues = removedNormalValues;
+                    break;
+                case GameDifficulty.Hard:
+                    removedValues = removedHardValues;
+                    break;
+                default:
+                    break;
+            }
+
+            var allCells = Board.GetAllCells();
+            for (int i = 0; i < removedValues; i++)
+            {
+                int index = generator.Next(allCells.Count);
+
+                SudokuCell selectedCell = allCells[index];
+                selectedCell.ClearValue();
+                allCells.Remove(selectedCell);
+            }
         }
 
     }

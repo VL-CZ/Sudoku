@@ -22,7 +22,7 @@ namespace Sudoku.Views
         public WinnerWindow(string time)
         {
             InitializeComponent();
-            TimeTextBlock.Text = $"Time: {time}";
+            TimeTextBlock.Text = time;
         }
 
         private void CloseButtonClick_Click(object sender, RoutedEventArgs e)

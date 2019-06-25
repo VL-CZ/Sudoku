@@ -76,7 +76,7 @@ namespace Sudoku.Models
             foreach (SudokuCell cell in incorrectCells)
             {
                 cell.RemoveHighlight();
-                cell.Value = "";
+                cell.ClearValue();
             }
         }
 
@@ -88,6 +88,8 @@ namespace Sudoku.Models
             var emptyCells = Board.GetAllCells().Where(x => x.IsEmpty()).ToList();
             int index = generator.Next(emptyCells.Count);
 
+            SudokuCell selectedCell = emptyCells[index];
+            selectedCell.Value=
             //emptyCells[index].Value = SudokuGenerator.SolutionValue(index).ToString();
         }
 

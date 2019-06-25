@@ -45,7 +45,7 @@ namespace Sudoku.ViewModels
             Board = new Board();
             Timer = new GameTimer();
             Generator = new SudokuGenerator(Board, difficulty);
-            Solver = new SudokuSolver(Board, Generator.GetSolvedSudokuValues());
+            Solver = new SudokuSolver(Board, Generator.SolvedSudokuValues);
         }
     }
 }
