@@ -44,7 +44,7 @@ namespace Sudoku.ViewModels
             this.difficulty = difficulty;
             Board = new Board();
             Timer = new GameTimer();
-            Generator = new SudokuGenerator(Board);
+            Generator = new SudokuGenerator(Board, difficulty);
             Solver = new SudokuSolver(Board);
         }
     }

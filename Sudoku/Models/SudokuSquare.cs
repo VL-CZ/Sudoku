@@ -59,7 +59,7 @@ namespace Sudoku.Models
         }
 
         /// <summary>
-        /// fill square with randomly generated values 1-9 (each value is used once)
+        /// generate empty cell in this square
         /// </summary>
         private void GenerateCells()
         {
