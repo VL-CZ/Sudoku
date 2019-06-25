@@ -21,6 +21,9 @@ namespace Sudoku.Models
         /// </summary>
         public Board Board { get; }
 
+        /// <summary>
+        /// values of solved sudoku
+        /// </summary>
         private readonly List<List<int>> sudokuSolutionValues;
 
         #endregion
@@ -88,8 +91,15 @@ namespace Sudoku.Models
             var emptyCells = Board.GetAllCells().Where(x => x.IsEmpty()).ToList();
             int index = generator.Next(emptyCells.Count);
 
+            if (emptyCells.Count==0)
+            {
+                return;
+            }
+
             SudokuCell selectedCell = emptyCells[index];
-            selectedCell.Value=
+            var position = Board.GetPosition(selectedCell);
+
+            selectedCell.Value = sudokuSolutionValues[position.Item1][position.Item2].ToString();
             //emptyCells[index].Value = SudokuGenerator.SolutionValue(index).ToString();
         }
 

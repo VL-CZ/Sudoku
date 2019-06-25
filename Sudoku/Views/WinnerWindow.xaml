@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel Orientation="Vertical">
             <TextBlock Style="{StaticResource LargeText}">Solved</TextBlock>
-            <TextBlock Name="TimeTextBlock"></TextBlock>
+            <TextBlock HorizontalAlignment="Center" Name="TimeTextBlock"></TextBlock>
             <Button Name="CloseButtonClick" Click="CloseButtonClick_Click" Content="OK"></Button>
         </StackPanel>
     </Grid>

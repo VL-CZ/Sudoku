@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Sudoku.Models
 {
@@ -297,6 +298,27 @@ namespace Sudoku.Models
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// get position of cell
+        /// </summary>
+        /// <param name="cell">cell to find</param>
+        /// <returns>tuple (i,j) -> cell is located at Board[i,j] </returns>
+        public Tuple<int, int> GetPosition(SudokuCell cell)
+        {
+            for (int i = 0; i < Size; i++)
+            {
+                for (int j = 0; j < Size; j++)
+                {
+                    if (this[i, j] == cell)
+                    {
+                        return new Tuple<int, int>(i, j);
+                    }
+                }
+            }
+
+            return null;
         }
     }
 }
