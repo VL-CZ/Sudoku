@@ -15,18 +15,14 @@ namespace Sudoku.Models
         /// <summary>
         /// get all cells on the board
         /// </summary>
-        public ObservableCollection<ObservableCollection<SudokuCell>> Cells
+        public List<List<SudokuCell>> Cells
         {
             get
             {
-                var cells = new ObservableCollection<ObservableCollection<SudokuCell>>();
+                var cells = new List<List<SudokuCell>>();
                 for (int i = 0; i < BoardSize; i++)
                 {
-                    var listRow = GetNthRow(i);
-                    var OC_row = new ObservableCollection<SudokuCell>();
-
-                    listRow.ForEach(cell => OC_row.Add(cell));
-                    cells.Add(OC_row);
+                    cells.Add(GetNthRow(i));
                 }
                 return cells;
             }
@@ -61,6 +57,21 @@ namespace Sudoku.Models
             get
             {
                 return BoardSize * BoardSize;
+            }
+        }
+
+        /// <summary>
+        /// get cell in selected row and column 
+        /// </summary>
+        /// <param name="row">index of the row</param>
+        /// <param name="column">index of the column</param>
+        /// <returns></returns>
+        public SudokuCell this[int row, int column]
+        {
+            get
+            {
+                var selectedRow = GetNthRow(row);
+                return selectedRow.ElementAt(column);
             }
         }
 
@@ -174,5 +185,24 @@ namespace Sudoku.Models
 
             return column;
         }
+
+        /// <summary>
+        /// get all squares on the board in 1-dimensional list
+        /// </summary>
+        /// <returns></returns>
+        public List<SudokuSquare> GetAllSquares()
+        {
+            var squares = new List<SudokuSquare>();
+
+            for (int i = 0; i < SquaresPerDimension; i++)
+            {
+                for (int j = 0; j < SquaresPerDimension; j++)
+                {
+                    squares.Add(Squares[i][j]);
+                }
+            }
+            return squares;
+        }
+
     }
 }

@@ -18,5 +18,23 @@ namespace Sudoku.Models
         {
             Board = board;
         }
+
+        public void ShowWrongValues()
+        {
+
+        }
+
+        public void ClearWrongValues()
+        {
+
+        }
+
+        public void ShowNextMove()
+        {
+
+        }
+
+
+
     }
 }

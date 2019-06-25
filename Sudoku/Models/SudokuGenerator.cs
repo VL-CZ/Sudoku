@@ -18,5 +18,11 @@ namespace Sudoku.Models
         {
             Board = board;
         }
+        
+        public void GenerateSudoku()
+        {
+            
+        }
+
     }
 }

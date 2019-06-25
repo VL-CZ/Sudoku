@@ -59,7 +59,7 @@ namespace Sudoku.Models
         }
 
         /// <summary>
-        /// fill square with values 1-9 (each value is used once)
+        /// fill square with randomly generated values 1-9 (each value is used once)
         /// </summary>
         private void GenerateCellValues()
         {
@@ -143,6 +143,20 @@ namespace Sudoku.Models
                 }
             }
             return list;
+        }
+
+        /// <summary>
+        /// get all sudoku cells in this sudoku square in 1-dimensional List
+        /// </summary>
+        /// <returns></returns>
+        public List<SudokuCell> GetAllCells()
+        {
+            var allCells = new List<SudokuCell>();
+            for (int i = 0; i < CellsInOneDimension; i++)
+            {
+                allCells.AddRange(GetNThRowOrColumn(i, SelectionType.Row));
+            }
+            return allCells;
         }
     }
 }

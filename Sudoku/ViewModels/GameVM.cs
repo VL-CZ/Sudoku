@@ -18,6 +18,16 @@ namespace Sudoku.ViewModels
         private readonly GameDifficulty difficulty;
 
         /// <summary>
+        /// sudoku generator
+        /// </summary>
+        private readonly SudokuGenerator generator;
+
+        /// <summary>
+        /// tool used for hints and detecting boxes with wrong value
+        /// </summary>
+        public readonly SudokuSolver solver;
+
+        /// <summary>
         /// sudoku board
         /// </summary>
         public Board Board { get; }
@@ -27,11 +37,6 @@ namespace Sudoku.ViewModels
         /// </summary>
         public GameTimer Timer { get; }
 
-        /// <summary>
-        /// sudoku generator
-        /// </summary>
-        public SudokuGenerator Generator { get; }
-
         #endregion
 
         public GameVM(GameDifficulty difficulty)
@@ -39,7 +44,8 @@ namespace Sudoku.ViewModels
             this.difficulty = difficulty;
             Board = new Board();
             Timer = new GameTimer();
-            Generator = new SudokuGenerator(Board);
+            generator = new SudokuGenerator(Board);
+            solver = new SudokuSolver(Board);
         }
     }
 }
