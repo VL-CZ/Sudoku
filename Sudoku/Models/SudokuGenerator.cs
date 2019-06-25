@@ -50,8 +50,6 @@ namespace Sudoku.Models
                 Board.GetSquareByID(i).FillWithValues(completeSudokuValues[i - 1]);
             }
 
-
-
         }
 
         /// <summary>

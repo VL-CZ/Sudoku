@@ -211,5 +211,34 @@ namespace Sudoku.Models
         {
             return GetAllSquares().Sum(x => x.FilledCells());
         }
+
+        public void SwapCells(SudokuCell cell1, SudokuCell cell2)
+        {
+            SudokuCell temp = cell1;
+            cell1 = cell2;
+            cell2 = temp;
+        }
+
+        public void SwapRows(int row1, int row2)
+        {
+            var row1Cells = GetNthRow(row1);
+            var row2Cells = GetNthRow(row2);
+
+            for (int i = 0; i < BoardSize; i++)
+            {
+                SwapCells(row1Cells[i], row2Cells[i]);
+            }
+        }
+
+        public void SwapColumns(int col1, int col2)
+        {
+            var col1Cells = GetNthColumn(col1);
+            var col2Cells = GetNthColumn(col2);
+
+            for (int i = 0; i < BoardSize; i++)
+            {
+                SwapCells(col1Cells[i], col2Cells[i]);
+            }
+        }
     }
 }
