@@ -15,12 +15,12 @@ namespace Sudoku.Models
         /// <summary>
         /// minimum possible value of the cell
         /// </summary>
-        private static readonly int minValue = 1;
+        public const int minValue = 1;
 
         /// <summary>
         /// maximum possible value of the cell
         /// </summary>
-        private static readonly int maxValue = 9;
+        public const int maxValue = 9;
 
         private string value;
 

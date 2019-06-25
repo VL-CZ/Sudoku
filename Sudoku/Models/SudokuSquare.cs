@@ -1,4 +1,5 @@
 ﻿using Sudoku.Enums;
+using Sudoku.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,7 +16,7 @@ namespace Sudoku.Models
         /// <summary>
         /// number generator
         /// </summary>
-        private static Random generator = new Random();
+        private readonly static Random generator = new Random();
 
         /// <summary>
         /// number of cells in the square
@@ -49,7 +50,6 @@ namespace Sudoku.Models
         {
             Id = id;
             Cells = new ObservableCollection<ObservableCollection<SudokuCell>>();
-            GenerateCellValues();
         }
 
         public SudokuSquare(int id, int numberOfCells)
@@ -61,37 +61,47 @@ namespace Sudoku.Models
         /// <summary>
         /// fill square with randomly generated values 1-9 (each value is used once)
         /// </summary>
-        private void GenerateCellValues()
+        private void GenerateCells()
         {
-            var values = new List<int>();
-            for (int i = 1; i <= numberOfCells; i++)
-            {
-                values.Add(i);
-            }
-
             for (int i = 1; i <= CellsInOneDimension; i++)
             {
                 var row = new ObservableCollection<SudokuCell>();
                 for (int j = 1; j <= CellsInOneDimension; j++)
                 {
-                    int isGenerated = generator.Next(0, 2);
-                    SudokuCell cell;
-
-                    if (isGenerated == 0)
-                    {
-                        cell = new SudokuCell();
-                    }
-                    else
-                    {
-                        int cellValue = values[generator.Next(values.Count)];
-                        values.Remove(cellValue);
-
-                        cell = new SudokuCell(cellValue, true);
-                    }
-                    row.Add(cell);
+                    row.Add(new SudokuCell());
                 }
                 Cells.Add(row);
             }
+
+            //var values = new List<int>();
+            //for (int i = 1; i <= numberOfCells; i++)
+            //{
+            //    values.Add(i);
+            //}
+
+            //for (int i = 1; i <= CellsInOneDimension; i++)
+            //{
+            //    var row = new ObservableCollection<SudokuCell>();
+            //    for (int j = 1; j <= CellsInOneDimension; j++)
+            //    {
+            //        int isGenerated = generator.Next(0, 2);
+            //        SudokuCell cell;
+
+            //        if (isGenerated == 0)
+            //        {
+            //            cell = new SudokuCell();
+            //        }
+            //        else
+            //        {
+            //            int cellValue = values[generator.Next(values.Count)];
+            //            values.Remove(cellValue);
+
+            //            cell = new SudokuCell(cellValue, true);
+            //        }
+            //        row.Add(cell);
+            //    }
+            //    Cells.Add(row);
+            //}
         }
 
         /// <summary>
@@ -141,6 +151,30 @@ namespace Sudoku.Models
         public List<SudokuCell> GetAllCells()
         {
             return Cells.SelectMany(x => x).ToList();
+        }
+
+        /// <summary>
+        /// fill this square with values (top to bottom, left to right)
+        /// </summary>
+        /// <param name="values"></param>
+        public void FillWithValues(List<int> values)
+        {
+            if (!values.HasUniqueValuesInRange(1, numberOfCells))
+            {
+                throw new ArgumentException();
+            }
+
+            int index = 0;
+            for (int i = 0; i < CellsInOneDimension; i++)
+            {
+                var row = new ObservableCollection<SudokuCell>();
+                for (int j = 0; j < CellsInOneDimension; j++)
+                {
+                    row.Add(new SudokuCell(values[index], false));
+                    index++;
+                }
+                Cells.Add(row);
+            }
         }
     }
 }
