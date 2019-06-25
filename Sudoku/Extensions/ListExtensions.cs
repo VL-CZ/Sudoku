@@ -58,23 +58,21 @@ namespace Sudoku.Extensions
         /// <summary>
         /// get valid completed sudoku
         /// </summary>
-        public static List<List<int>> ValidCompletedSudoku
+        /// <returns></returns>
+        public static List<List<int>> GetValidCompletedSudoku()
         {
-            get
-            {
                 return new List<List<int>>
                 {
-                    new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, // 1st square
-                    new List<int> { 4, 5, 6, 7, 8, 9, 1, 2, 3 }, // 2nd square ...
-                    new List<int> { 7,8,9,1,2,3,4,5,6},
-                    new List<int> { 2,3,4,5,6,7,8,9,1},
-                    new List<int> {5,6,7,8,9,1,2,3,4},
-                    new List<int> {8,9,1,2,3,4,5,6,7},
-                    new List<int> {3,4,5,6,7,8,9,1,2},
-                    new List<int> {6,7,8,9,1,2,3,4,5},
-                    new List<int> {9,1,2,3,4,5,6,7,8}
+                    new List<int> {1,8,4,5,6,2,3,9,7}, // 1st square
+                    new List<int> {9,6,3,7,4,8,5,1,2}, // 2nd square ...
+                    new List<int> {7,2,5,3,1,9,8,6,4},
+                    new List<int> {2,3,9,7,5,6,4,1,8},
+                    new List<int> {6,5,7,1,8,4,2,3,9},
+                    new List<int> {1,4,8,2,9,3,6,5,7},
+                    new List<int> {9,4,1,6,2,3,8,7,5},
+                    new List<int> {3,7,6,8,9,5,4,2,1},
+                    new List<int> {5,8,2,4,7,1,9,3,6}
                 };
-            }
         }
     }
 }

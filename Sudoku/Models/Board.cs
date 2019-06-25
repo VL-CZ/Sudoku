@@ -212,13 +212,23 @@ namespace Sudoku.Models
             return GetAllSquares().Sum(x => x.FilledCells());
         }
 
-        public void SwapCells(SudokuCell cell1, SudokuCell cell2)
+        /// <summary>
+        /// swap values of the cells
+        /// </summary>
+        /// <param name="cell1"></param>
+        /// <param name="cell2"></param>
+        public void SwapCellValues(SudokuCell cell1, SudokuCell cell2)
         {
-            SudokuCell temp = cell1;
-            cell1 = cell2;
-            cell2 = temp;
+            string temp = cell1.Value;
+            cell1.Value = cell2.Value;
+            cell2.Value = temp;
         }
 
+        /// <summary>
+        /// swap rows with selected indexes
+        /// </summary>
+        /// <param name="row1"></param>
+        /// <param name="row2"></param>
         public void SwapRows(int row1, int row2)
         {
             var row1Cells = GetNthRow(row1);
@@ -226,10 +236,15 @@ namespace Sudoku.Models
 
             for (int i = 0; i < BoardSize; i++)
             {
-                SwapCells(row1Cells[i], row2Cells[i]);
+                SwapCellValues(row1Cells[i], row2Cells[i]);
             }
         }
 
+        /// <summary>
+        /// swap columns with selected indexes
+        /// </summary>
+        /// <param name="col1"></param>
+        /// <param name="col2"></param>
         public void SwapColumns(int col1, int col2)
         {
             var col1Cells = GetNthColumn(col1);
@@ -237,7 +252,24 @@ namespace Sudoku.Models
 
             for (int i = 0; i < BoardSize; i++)
             {
-                SwapCells(col1Cells[i], col2Cells[i]);
+                SwapCellValues(col1Cells[i], col2Cells[i]);
+            }
+        }
+
+        /// <summary>
+        /// transponse whole board
+        /// </summary>
+        public void Transponse()
+        {
+            for (int i = 0; i < BoardSize; i++)
+            {
+                for (int j = 0; j < BoardSize; j++)
+                {
+                    if (i > j)
+                    {
+                        SwapCellValues(this[i, j], this[j, i]);
+                    }
+                }
             }
         }
     }

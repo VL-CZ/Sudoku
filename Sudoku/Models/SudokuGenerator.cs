@@ -12,7 +12,22 @@ namespace Sudoku.Models
     class SudokuGenerator
     {
         #region Fields and Properties
-        
+
+        /// <summary>
+        /// number of minimum row / column swaps during sudoku generating
+        /// </summary>
+        private const int minrowOrColumnSwaps = 50;
+
+        /// <summary>
+        /// number of maximum row / column swaps during sudoku generating
+        /// </summary>
+        private const int maxrowOrColumnSwaps = 100;
+
+        /// <summary>
+        /// number generator
+        /// </summary>
+        private readonly static Random generator = new Random();
+
         /// <summary>
         /// difficulty of the sudoku
         /// </summary>
@@ -43,11 +58,37 @@ namespace Sudoku.Models
         /// </summary>
         private void GetValidCompleteSudoku()
         {
-            completeSudokuValues = ListExtensions.ValidCompletedSudoku;
+            completeSudokuValues = ListExtensions.GetValidCompletedSudoku();
 
             for (int i = 1; i <= Board.BoardSize; i++)
             {
                 Board.GetSquareByID(i).FillWithValues(completeSudokuValues[i - 1]);
+            }
+
+            int numberOfRepetitions = generator.Next(minrowOrColumnSwaps, maxrowOrColumnSwaps);
+
+            for (int i = 0; i < numberOfRepetitions; i++)
+            {
+                int rowsOrCols = generator.Next(0, 3);
+                int squareNumber = generator.Next(Board.SquaresPerDimension);
+
+                int outerIndex = squareNumber * Board.SquaresPerDimension;
+
+                int first = outerIndex + generator.Next(Board.SquaresPerDimension);
+                int second = outerIndex + generator.Next(Board.SquaresPerDimension);
+
+                if (rowsOrCols == 0)
+                {
+                    Board.SwapColumns(first, second);
+                }
+                else if (rowsOrCols == 1)
+                {
+                    Board.SwapRows(first, second);
+                }
+                else
+                {
+                    Board.Transponse();
+                }
             }
 
         }
@@ -55,7 +96,7 @@ namespace Sudoku.Models
         /// <summary>
         /// generates valid sudoku grid
         /// </summary>
-        public void RemoveValues()
+        private void RemoveValues()
         {
 
         }
