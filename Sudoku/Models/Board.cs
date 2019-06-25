@@ -204,5 +204,13 @@ namespace Sudoku.Models
             return Cells.SelectMany(x => x).ToList();
         }
 
+        /// <summary>
+        /// get number of non-empty cells
+        /// </summary>
+        /// <returns></returns>
+        public int FilledCells()
+        {
+            return GetAllSquares().Sum(x => x.FilledCells());
+        }
     }
 }

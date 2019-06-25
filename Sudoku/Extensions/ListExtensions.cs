@@ -20,7 +20,7 @@ namespace Sudoku.Extensions
 
             for (int i = 1; i <= 9; i++)
             {
-                if (!values.Contains(i))
+                if (!values.Contains(i.ToString()))
                 {
                     return false;
                 }

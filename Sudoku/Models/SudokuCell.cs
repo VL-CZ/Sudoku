@@ -22,30 +22,12 @@ namespace Sudoku.Models
         /// </summary>
         private static readonly int maxValue = 9;
 
-        private int id;
-
-        /// <summary>
-        /// id of the cell (initialized in ctor)
-        /// </summary>
-        public int Id
-        {
-            get
-            {
-                return id;
-            }
-            set
-            {
-                id = value;
-                RaisePropertyChanged();
-            }
-        }
-
-        private int? value;
+        private string value;
 
         /// <summary>
         /// cell value
         /// </summary>
-        public int? Value
+        public string Value
         {
             get
             {
@@ -53,10 +35,11 @@ namespace Sudoku.Models
             }
             set
             {
-                int? val = value;
-                if (IsDefaultValue == false && (val == null) || (val >= minValue && val <= maxValue))
+                string stringValue = value;
+                if (IsDefaultValue == false && (string.IsNullOrEmpty(stringValue) ||
+                    (int.TryParse(stringValue, out int intValue) && intValue >= minValue && intValue <= maxValue)))
                 {
-                    this.value = val;
+                    this.value = stringValue;
                 }
                 RaisePropertyChanged();
             }
@@ -95,12 +78,22 @@ namespace Sudoku.Models
         public SudokuCell()
         {
             IsDefaultValue = false;
+            Value = "";
         }
 
         public SudokuCell(int? value, bool defaultValue)
         {
-            Value = value;
+            Value = value.ToString();
             IsDefaultValue = defaultValue;
+        }
+
+        /// <summary>
+        /// checks whether this cell is empty
+        /// </summary>
+        /// <returns></returns>
+        public bool IsEmpty()
+        {
+            return String.IsNullOrEmpty(Value);
         }
 
         public override string ToString()
