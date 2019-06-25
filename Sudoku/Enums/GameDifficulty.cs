@@ -9,5 +9,10 @@ namespace Sudoku.Enums
     /// <summary>
     /// difficulty of sudoku
     /// </summary>
-    public enum GameDifficulty { Easy, Normal, Hard }
+    public enum GameDifficulty
+    {
+        Easy,
+        Normal,
+        Hard
+    }
 }

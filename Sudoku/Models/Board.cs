@@ -256,6 +256,11 @@ namespace Sudoku.Models
             }
         }
 
+        /// <summary>
+        /// swap rows of squares
+        /// </summary>
+        /// <param name="row1"></param>
+        /// <param name="row2"></param>
         public void SwapRowSquares(int row1, int row2)
         {
             for (int i = 0; i < SquaresPerDimension; i++)
@@ -264,6 +269,11 @@ namespace Sudoku.Models
             }
         }
 
+        /// <summary>
+        /// swap columns of squares
+        /// </summary>
+        /// <param name="col1"></param>
+        /// <param name="col2"></param>
         public void SwapColumnSquares(int col1, int col2)
         {
             for (int i = 0; i < SquaresPerDimension; i++)
