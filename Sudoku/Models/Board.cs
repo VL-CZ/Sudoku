@@ -80,24 +80,6 @@ namespace Sudoku.Models
         public Board()
         {
             Squares = new ObservableCollection<ObservableCollection<SudokuSquare>>();
-
-            CreateSquares();
-        }
-
-        /// <summary>
-        /// create Sudoku squares on the board
-        /// </summary>
-        private void CreateSquares()
-        {
-            for (int i = 0; i < SquaresPerDimension; i++)
-            {
-                var row = new ObservableCollection<SudokuSquare>();
-                for (int j = 1; j <= SquaresPerDimension; j++)
-                {
-                    row.Add(new SudokuSquare(3 * i + j));
-                }
-                Squares.Add(row);
-            }
         }
 
         /// <summary>

@@ -36,6 +36,11 @@ namespace Sudoku.Views
             ShowSudokuSquares();
         }
 
+        /// <summary>
+        /// unfocus cell on enter click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -44,6 +49,11 @@ namespace Sudoku.Views
             }
         }
 
+        /// <summary>
+        /// quit app
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void QuitGameButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
@@ -92,10 +102,17 @@ namespace Sudoku.Views
             GameIC.ItemsSource = gameVM.Board.GetSquareByID(1).Cells;
         }
 
+        /// <summary>
+        /// check if sudoku is solved
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            gameVM.Solver.IsSolved();
-            var x = gameVM.Board.Cells;
+        {     
+            if (gameVM.Solver.IsSolved())
+            {
+                MessageBox.Show("SOLVED!");
+            }
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Sudoku.Extensions
         /// <returns></returns>
         public static bool HasAllSudokuValues(this List<SudokuCell> sudokuCells)
         {
-            var values = sudokuCells.Select(cell => cell.Value);
+            var values = sudokuCells.Select(cell => cell.Value.Trim());
 
             for (int i = 1; i <= sudokuCells.Count; i++)
             {
