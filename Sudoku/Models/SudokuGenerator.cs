@@ -69,28 +69,37 @@ namespace Sudoku.Models
 
             for (int i = 0; i < numberOfRepetitions; i++)
             {
-                int rowsOrCols = generator.Next(0, 3);
+                int option = generator.Next(0, 5);
                 int squareNumber = generator.Next(Board.SquaresPerDimension);
 
                 int outerIndex = squareNumber * Board.SquaresPerDimension;
+                int innerIndex1 = generator.Next(Board.SquaresPerDimension);
+                int innerIndex2 = generator.Next(Board.SquaresPerDimension);
 
-                int first = outerIndex + generator.Next(Board.SquaresPerDimension);
-                int second = outerIndex + generator.Next(Board.SquaresPerDimension);
+                int first = outerIndex + innerIndex1;
+                int second = outerIndex + innerIndex2;
 
-                if (rowsOrCols == 0)
+                switch (option)
                 {
-                    Board.SwapColumns(first, second);
-                }
-                else if (rowsOrCols == 1)
-                {
-                    Board.SwapRows(first, second);
-                }
-                else
-                {
-                    Board.Transponse();
+                    case 0:
+                        Board.SwapColumns(first, second);
+                        break;
+                    case 1:
+                        Board.SwapRows(first, second);
+                        break;
+                    case 2:
+                        Board.SwapColumnSquares(innerIndex1, innerIndex2);
+                        break;
+                    case 3:
+                        Board.SwapRowSquares(innerIndex1, innerIndex2);
+                        break;
+                    case 4:
+                        Board.Transponse();
+                        break;
+                    default:
+                        break;
                 }
             }
-
         }
 
         /// <summary>

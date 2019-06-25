@@ -256,6 +256,22 @@ namespace Sudoku.Models
             }
         }
 
+        public void SwapRowSquares(int row1, int row2)
+        {
+            for (int i = 0; i < SquaresPerDimension; i++)
+            {
+                SwapRows(row1 * SquaresPerDimension + i, row2 * SquaresPerDimension + i);
+            }
+        }
+
+        public void SwapColumnSquares(int col1, int col2)
+        {
+            for (int i = 0; i < SquaresPerDimension; i++)
+            {
+                SwapColumns(col1 * SquaresPerDimension + i, col2 * SquaresPerDimension + i);
+            }
+        }
+
         /// <summary>
         /// transponse whole board
         /// </summary>
