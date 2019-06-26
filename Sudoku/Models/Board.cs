@@ -1,4 +1,5 @@
 ﻿using Sudoku.Enums;
+using Sudoku.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -319,6 +320,40 @@ namespace Sudoku.Models
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// get square which contains cell in selected row and column
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="column"></param>
+        /// <returns></returns>
+        private SudokuSquare GetSquareFromPosition(int row, int column)
+        {
+            int squareRow = row / SquaresPerDimension;
+            int squareCol = column / SquaresPerDimension;
+
+            return Squares[squareRow][squareCol];
+        }
+
+        /// <summary>
+        /// is board at this point valid?
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="column"></param>
+        /// <returns></returns>
+        public bool IsValid(int row, int column)
+        {
+            var rowNumbers = GetNthRow(row);
+            var colNumbers = GetNthColumn(column);
+            var square = GetSquareFromPosition(row, column).GetAllCells();
+
+            return (rowNumbers.IsSudokuValid() && colNumbers.IsSudokuValid() && square.IsSudokuValid());
+        }
+
+        public Board Clone()
+        {
+            return (Board)MemberwiseClone();
         }
     }
 }

@@ -36,7 +36,7 @@ namespace Sudoku.Models
         /// <summary>
         /// number of removed values in hard difficulty
         /// </summary>
-        private const int removedHardValues= 50;
+        private const int removedHardValues = 50;
 
         /// <summary>
         /// number generator
@@ -63,12 +63,15 @@ namespace Sudoku.Models
         /// </summary>
         public List<List<int>> SolvedSudokuValues { get; }
 
+        public SudokuSolver Solver { get; }
+
         #endregion
 
-        public SudokuGenerator(Board board, GameDifficulty gameDifficulty)
+        public SudokuGenerator(Board board, GameDifficulty gameDifficulty, SudokuSolver solver)
         {
             difficulty = gameDifficulty;
             Board = board;
+            Solver = solver;
             completeSudokuValues = new List<List<int>>();
             GetValidCompleteSudoku();
 
@@ -164,8 +167,12 @@ namespace Sudoku.Models
                 int index = generator.Next(allCells.Count);
 
                 SudokuCell selectedCell = allCells[index];
-                selectedCell.ClearValue();
-                allCells.Remove(selectedCell);
+
+                if (Solver.Solve(Board.Clone()))
+                {
+                    selectedCell.ClearValue();
+                    allCells.Remove(selectedCell);
+                }
             }
         }
 

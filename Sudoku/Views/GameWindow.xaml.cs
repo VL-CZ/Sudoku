@@ -109,7 +109,7 @@ namespace Sudoku.Views
         /// <param name="e"></param>
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {     
-            if (gameVM.Solver.IsSolved())
+            if (gameVM.Manager.IsSolved())
             {
                 gameVM.Timer.StopTimer();
                 WinnerWindow window = new WinnerWindow(TimeTextBlock.Text);
@@ -119,17 +119,17 @@ namespace Sudoku.Views
 
         private void ShowWrongValuesButton_Click(object sender, RoutedEventArgs e)
         {
-            gameVM.Solver.ShowWrongValues();
+            gameVM.Manager.ShowWrongValues();
         }
 
         private void ClearWrongButton_Click(object sender, RoutedEventArgs e)
         {
-            gameVM.Solver.ClearWrongValues();
+            gameVM.Manager.ClearWrongValues();
         }
 
         private void ShowHintButton_Click(object sender, RoutedEventArgs e)
         {
-            gameVM.Solver.ShowHint();
+            gameVM.Manager.ShowHint();
         }
     }
 }

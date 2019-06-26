@@ -56,6 +56,21 @@ namespace Sudoku.Extensions
         }
 
         /// <summary>
+        /// check whether this list is sudoku valid (contains unique numbers or empty cells)
+        /// </summary>
+        /// <param name="cells"></param>
+        /// <returns></returns>
+        public static bool IsSudokuValid(this List<SudokuCell> cells)
+        {
+            var numbers = cells.Where(x => !x.IsEmpty()).ToList();
+            if (cells.Count == SudokuCell.maxValue && numbers.Count == numbers.Distinct().Count())
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
         /// get valid completed sudoku
         /// </summary>
         /// <returns></returns>
