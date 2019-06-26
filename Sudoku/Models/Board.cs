@@ -36,6 +36,11 @@ namespace Sudoku.Models
         public ObservableCollection<ObservableCollection<SudokuSquare>> Squares { get; }
 
         /// <summary>
+        /// get all possible cell values
+        /// </summary>
+        public List<int> AllSudokuValues { get; }
+
+        /// <summary>
         /// get size of the board (number of cells in 1 dimension) - also number of cells in each square and number of squares on the board
         /// </summary>
         public int Size { get; } = 9;
@@ -83,6 +88,12 @@ namespace Sudoku.Models
         {
             Squares = new ObservableCollection<ObservableCollection<SudokuSquare>>();
             CreateSquares();
+
+            AllSudokuValues = new List<int>();
+            for (int i = SudokuCell.minValue; i <= SudokuCell.maxValue; i++)
+            {
+                AllSudokuValues.Add(i);
+            }
         }
 
         /// <summary>
@@ -323,37 +334,37 @@ namespace Sudoku.Models
         }
 
         /// <summary>
+        /// get row of selected cell
+        /// </summary>
+        /// <param name="cell"></param>
+        /// <returns></returns>
+        public int GetRow(SudokuCell cell)
+        {
+            return GetPosition(cell).Item1;
+        }
+
+        /// <summary>
+        /// get column of selected cell
+        /// </summary>
+        /// <param name="cell"></param>
+        /// <returns></returns>
+        public int GetColumn(SudokuCell cell)
+        {
+            return GetPosition(cell).Item2;
+        }
+
+        /// <summary>
         /// get square which contains cell in selected row and column
         /// </summary>
         /// <param name="row"></param>
         /// <param name="column"></param>
         /// <returns></returns>
-        private SudokuSquare GetSquareFromPosition(int row, int column)
+        public SudokuSquare GetSquareFromPosition(int row, int column)
         {
             int squareRow = row / SquaresPerDimension;
             int squareCol = column / SquaresPerDimension;
 
             return Squares[squareRow][squareCol];
-        }
-
-        /// <summary>
-        /// is board at this point valid?
-        /// </summary>
-        /// <param name="row"></param>
-        /// <param name="column"></param>
-        /// <returns></returns>
-        public bool IsValid(int row, int column)
-        {
-            var rowNumbers = GetNthRow(row);
-            var colNumbers = GetNthColumn(column);
-            var square = GetSquareFromPosition(row, column).GetAllCells();
-
-            return (rowNumbers.IsSudokuValid() && colNumbers.IsSudokuValid() && square.IsSudokuValid());
-        }
-
-        public Board Clone()
-        {
-            return (Board)MemberwiseClone();
         }
     }
 }

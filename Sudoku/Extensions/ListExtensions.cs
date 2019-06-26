@@ -71,12 +71,22 @@ namespace Sudoku.Extensions
         }
 
         /// <summary>
+        /// get values from list of cells
+        /// </summary>
+        /// <param name="cells"></param>
+        /// <returns></returns>
+        public static List<int> GetValuesFromCells(this List<SudokuCell> cells)
+        {
+            return cells.Where(x => !x.IsEmpty()).Select(x => int.Parse(x.Value)).ToList();
+        }
+
+        /// <summary>
         /// get valid completed sudoku
         /// </summary>
         /// <returns></returns>
         public static List<List<int>> GetValidCompletedSudoku()
         {
-                return new List<List<int>>
+            return new List<List<int>>
                 {
                     new List<int> {1,8,4,5,6,2,3,9,7}, // 1st square
                     new List<int> {9,6,3,7,4,8,5,1,2}, // 2nd square ...

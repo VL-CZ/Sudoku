@@ -3,53 +3,66 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sudoku.Extensions;
 
 namespace Sudoku.Models
 {
     class SudokuSolver
     {
-        //private Board Board { get; }
-        //private List<List<List<int>>> possibleValues;
+        #region Fields and Properties
 
-        //public SudokuSolver(Board sudokuValues)
-        //{
-        //    //Board = sudokuValues;
-        //    possibleValues = new List<List<List<int>>>();
-        //}
+        /// <summary>
+        /// 
+        /// </summary>
+        private List<int>[,] possibleValues;
 
-        public SudokuSolver()
+        /// <summary>
+        /// 
+        /// </summary>
+        public Board Board { get; }
+
+        #endregion
+
+        public SudokuSolver(Board board)
         {
-
+            Board = board;
+            possibleValues = new List<int>[Board.Size, Board.Size];
+            FillWithBaseValues();
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="board"></param>
+        private void FillWithBaseValues()
+        {
+            //for (int i = 0; i < Board.Size; i++)
+            //{
+            //    for (int j = 0; j < Board.Size; j++)
+            //    {
+            //        possibleValues[i, j] = new List<int>();
+            //        possibleValues[i, j].Add(int.Parse(Board[i, j].Value));
+            //    }
+            //}
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Board"></param>
         /// <param name="row"></param>
         /// <param name="column"></param>
-        public bool Solve(Board board)
+        public bool IsOnlyPossibleMove(int row, int column, int value)
         {
-            for (int row = 0; row < board.Size; row++)
-            {
-                for (int column = 0; column < board.Size; column++)
-                {
-                    if (board[row, column].IsEmpty())
-                    {
-                        for (int number = SudokuCell.minValue; number <= SudokuCell.maxValue; number++)
-                        {
-                            board[row, column].Value = number.ToString();
-                            if (board.IsValid(row, column) && Solve(board))
-                            {
-                                return true;
-                            }
-                            board[row, column].ClearValue();
-                        }
-                        return false;
-                    }
-                }
-            }
-            return true;
+            var cellsRow = Board.GetNthRow(row).GetValuesFromCells();
+            var cellsCol = Board.GetNthColumn(column).GetValuesFromCells();
+            var cellsSquare = Board.GetSquareFromPosition(row, column).GetAllCells().GetValuesFromCells();
+
+            var invalidValues = cellsRow.Union(cellsCol).Union(cellsSquare).ToList();
+            invalidValues.Remove(value);
+
+            var validValues = this.Board.AllSudokuValues.Except(invalidValues);
+
+            return (validValues.Count() == 1 && validValues.First() == value);
         }
 
     }

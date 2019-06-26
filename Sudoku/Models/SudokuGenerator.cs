@@ -162,20 +162,19 @@ namespace Sudoku.Models
             }
 
             var allCells = Board.GetAllCells();
-            for (int i = 0; i < removedValues; i++)
+            for (int i = 0; i < 2*removedValues; i++)
             {
                 int index = generator.Next(allCells.Count);
 
                 SudokuCell selectedCell = allCells[index];
 
-                if (Solver.Solve(Board.Clone()))
+                if (Solver.IsOnlyPossibleMove(Board.GetRow(selectedCell), Board.GetColumn(selectedCell), int.Parse(selectedCell.Value)))
                 {
                     selectedCell.ClearValue();
                     allCells.Remove(selectedCell);
                 }
             }
         }
-
 
     }
 }
