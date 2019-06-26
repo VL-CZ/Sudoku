@@ -117,16 +117,31 @@ namespace Sudoku.Views
             }
         }
 
+        /// <summary>
+        /// show wrong values
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ShowWrongValuesButton_Click(object sender, RoutedEventArgs e)
         {
             gameVM.Manager.ShowWrongValues();
         }
 
+        /// <summary>
+        /// clear wrong values
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClearWrongButton_Click(object sender, RoutedEventArgs e)
         {
             gameVM.Manager.ClearWrongValues();
         }
 
+        /// <summary>
+        /// show hint
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ShowHintButton_Click(object sender, RoutedEventArgs e)
         {
             gameVM.Manager.ShowHint();

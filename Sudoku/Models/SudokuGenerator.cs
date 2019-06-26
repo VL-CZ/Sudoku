@@ -77,17 +77,6 @@ namespace Sudoku.Models
 
         }
 
-        private void FillValidValuesToBoard()
-        {
-            for (int i = 0; i < Board.Size; i++)
-            {
-                for (int j = 0; j < Board.Size; j++)
-                {
-                    Board[i, j].Value = completeSudokuValues[i][j].ToString();
-                }
-            }
-        }
-
         /// <summary>
         /// get random valid completed sudoku grid
         /// </summary>

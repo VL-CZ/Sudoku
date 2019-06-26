@@ -25,6 +25,11 @@ namespace Sudoku.Views
             TimeTextBlock.Text = time;
         }
 
+        /// <summary>
+        /// close window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CloseButtonClick_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

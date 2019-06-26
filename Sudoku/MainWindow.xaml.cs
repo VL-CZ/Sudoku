@@ -28,6 +28,11 @@ namespace Sudoku
             InitializeComponent();
         }
 
+        /// <summary>
+        /// play easy sudoku
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EasyGameButton_Click(object sender, RoutedEventArgs e)
         {
             GameWindow window = new GameWindow(GameDifficulty.Easy);
@@ -35,6 +40,11 @@ namespace Sudoku
             this.Close();
         }
 
+        /// <summary>
+        /// play normal sudoku
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NormalGameButton_Click(object sender, RoutedEventArgs e)
         {
             GameWindow window = new GameWindow(GameDifficulty.Normal);
@@ -42,6 +52,11 @@ namespace Sudoku
             this.Close();
         }
 
+        /// <summary>
+        /// play hard sudoku
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HardGameButton_Click(object sender, RoutedEventArgs e)
         {
             GameWindow window = new GameWindow(GameDifficulty.Hard);
@@ -49,6 +64,11 @@ namespace Sudoku
             this.Close();
         }
 
+        /// <summary>
+        /// close app
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CloseAppButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
