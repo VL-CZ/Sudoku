@@ -70,14 +70,10 @@ namespace Sudoku.Models
             difficulty = gameDifficulty;
             Board = board;
 
-            do
-            {
-                completeSudokuValues = new List<List<int>>();
-                SolvedSudokuValues = new List<List<int>>();
-                GetValidCompleteSudoku();
-                FillValidValuesToBoard();
-                RemoveValues();
-            } while (Board.EmptyCells() < 50);
+            completeSudokuValues = new List<List<int>>();
+            SolvedSudokuValues = new List<List<int>>();
+            GetValidCompleteSudoku();
+            RemoveValues();
 
         }
 
@@ -157,31 +153,70 @@ namespace Sudoku.Models
         /// </summary>
         private void RemoveValues()
         {
-            int removedValues = 0;
+            int valuesToRemove = 0;
 
             switch (difficulty)
             {
                 case GameDifficulty.Easy:
-                    removedValues = removedEasyValues;
+                    valuesToRemove = removedEasyValues;
                     break;
                 case GameDifficulty.Normal:
-                    removedValues = removedNormalValues;
+                    valuesToRemove = removedNormalValues;
                     break;
                 case GameDifficulty.Hard:
-                    removedValues = removedHardValues;
+                    valuesToRemove = removedHardValues;
                     break;
                 default:
                     break;
             }
 
-            var allCells = Board.GetAllCells();
+            int removedInCell = 5;
 
-            int cleared = 0;
-            int invalid = 0;
+            List<SudokuCell> allCells;
+            int totalCleared = 0;
+            int cleared = 0, invalid;
 
-            while (cleared < removedValues)
+            var listOfSquares = Board.GetAllSquares();
+            listOfSquares.Shuffle();
+
+            foreach (SudokuSquare square in listOfSquares)
             {
-                if (cleared + invalid == Board.GetAllCells().Count)
+                allCells = square.GetAllCells();
+                cleared = 0;
+                invalid = 0;
+
+                while (cleared <= removedInCell)
+                {
+                    if (cleared + invalid == Board.Size)
+                    {
+                        break;
+                    }
+                    int index = generator.Next(allCells.Count);
+
+                    SudokuCell selectedCell = allCells[index];
+
+                    if (IsOnlyPossibleMove(Board.GetRow(selectedCell), Board.GetColumn(selectedCell), int.Parse(selectedCell.Value)))
+                    {
+                        selectedCell.ClearValue();
+                        cleared++;
+                    }
+                    else
+                    {
+                        invalid++;
+                    }
+                    allCells.Remove(selectedCell);
+                }
+                valuesToRemove -= cleared;
+                totalCleared += cleared;
+            }
+
+            allCells = Board.GetAllCells().Where(x => !x.IsEmpty()).ToList();
+            cleared = 0;
+            invalid = 0;
+
+            while (cleared <= valuesToRemove)
+            {
+                if (cleared + invalid == Board.Size)
                 {
                     break;
                 }
@@ -200,6 +235,7 @@ namespace Sudoku.Models
                 }
                 allCells.Remove(selectedCell);
             }
+            int ax = cleared + totalCleared;
         }
 
         /// <summary>

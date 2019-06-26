@@ -220,7 +220,7 @@ namespace Sudoku.Models
         /// get number of non-empty cells
         /// </summary>
         /// <returns></returns>
-        public int FilledCells()
+        public int FilledCellsCount()
         {
             return GetAllSquares().Sum(x => x.FilledCells());
         }
@@ -371,9 +371,9 @@ namespace Sudoku.Models
         /// get number of empty cells
         /// </summary>
         /// <returns></returns>
-        public int EmptyCells()
+        public int EmptyCellsCount()
         {
-            return this.CellCount - FilledCells();
+            return this.CellCount - FilledCellsCount();
         }
     }
 }

@@ -10,6 +10,11 @@ namespace Sudoku.Extensions
     static class ListExtensions
     {
         /// <summary>
+        /// number generator
+        /// </summary>
+        private static Random rng = new Random();
+
+        /// <summary>
         /// checks whether all values are in range <paramref name="min"/> - <paramref name="max"/> exactly once
         /// </summary>
         /// <param name="values">list of values</param>
@@ -78,6 +83,24 @@ namespace Sudoku.Extensions
         public static List<int> GetValuesFromCells(this List<SudokuCell> cells)
         {
             return cells.Where(x => !x.IsEmpty()).Select(x => int.Parse(x.Value)).ToList();
+        }
+
+        /// <summary>
+        /// shuffle list
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
+        public static void Shuffle<T>(this IList<T> list)
+        {
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
         }
 
         /// <summary>

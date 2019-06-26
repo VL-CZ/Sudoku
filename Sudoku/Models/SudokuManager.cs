@@ -108,7 +108,7 @@ namespace Sudoku.Models
         /// </summary>
         public bool IsSolved()
         {
-            if (Board.FilledCells() < Board.CellCount)
+            if (Board.FilledCellsCount() < Board.CellCount)
             {
                 return false;
             }
