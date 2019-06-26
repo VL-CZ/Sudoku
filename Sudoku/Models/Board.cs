@@ -226,6 +226,15 @@ namespace Sudoku.Models
         }
 
         /// <summary>
+        /// get number of empty cells
+        /// </summary>
+        /// <returns></returns>
+        public int EmptyCellsCount()
+        {
+            return this.CellCount - FilledCellsCount();
+        }
+
+        /// <summary>
         /// swap values of the cells
         /// </summary>
         /// <param name="cell1"></param>
@@ -368,12 +377,12 @@ namespace Sudoku.Models
         }
 
         /// <summary>
-        /// get number of empty cells
+        /// get all non-empty cells
         /// </summary>
         /// <returns></returns>
-        public int EmptyCellsCount()
+        public List<SudokuCell> GetAllNonEmptyCells()
         {
-            return this.CellCount - FilledCellsCount();
+            return GetAllCells().Where(x => !x.IsEmpty()).ToList();
         }
     }
 }

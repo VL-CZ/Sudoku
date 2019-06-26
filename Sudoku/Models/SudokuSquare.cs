@@ -192,5 +192,14 @@ namespace Sudoku.Models
                 Cells.Add(row);
             }
         }
+        
+        /// <summary>
+        /// get all non-empty cells in the square
+        /// </summary>
+        /// <returns></returns>
+        public List<SudokuCell> GetAllNonEmptyCells()
+        {
+            return GetAllCells().Where(x => !x.IsEmpty()).ToList();
+        }
     }
 }

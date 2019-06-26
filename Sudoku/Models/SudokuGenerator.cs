@@ -170,59 +170,46 @@ namespace Sudoku.Models
                     break;
             }
 
-            int removedInCell = 5;
-
-            List<SudokuCell> allCells;
-            int totalCleared = 0;
-            int cleared = 0, invalid;
+            int removedInCell = valuesToRemove / Board.Size - 1;
+            int cleared = 0;
 
             var listOfSquares = Board.GetAllSquares();
             listOfSquares.Shuffle();
 
+            // clear squares
             foreach (SudokuSquare square in listOfSquares)
             {
-                allCells = square.GetAllCells();
-                cleared = 0;
-                invalid = 0;
-
-                while (cleared <= removedInCell)
-                {
-                    if (cleared + invalid == Board.Size)
-                    {
-                        break;
-                    }
-                    int index = generator.Next(allCells.Count);
-
-                    SudokuCell selectedCell = allCells[index];
-
-                    if (IsOnlyPossibleMove(Board.GetRow(selectedCell), Board.GetColumn(selectedCell), int.Parse(selectedCell.Value)))
-                    {
-                        selectedCell.ClearValue();
-                        cleared++;
-                    }
-                    else
-                    {
-                        invalid++;
-                    }
-                    allCells.Remove(selectedCell);
-                }
-                valuesToRemove -= cleared;
-                totalCleared += cleared;
+                int temp = ClearNRandomCells(square.GetAllNonEmptyCells(), removedInCell);
+                cleared += temp;
+                valuesToRemove -= temp;
             }
 
-            allCells = Board.GetAllCells().Where(x => !x.IsEmpty()).ToList();
-            cleared = 0;
-            invalid = 0;
+            var allCells = Board.GetAllNonEmptyCells(); // all non-empty cells
 
-            while (cleared <= valuesToRemove)
+            // clear everything else 
+            cleared += ClearNRandomCells(allCells, valuesToRemove);
+        }
+
+        /// <summary>
+        /// clear N random cells (if possible) from collection
+        /// </summary>
+        /// <param name="cells">collection of cells</param>
+        /// <param name="N"></param>
+        /// <returns>number of successfully cleared cells</returns>
+        private int ClearNRandomCells(List<SudokuCell> cells, int N)
+        {
+            int cleared = 0;
+            int invalid = 0;
+
+            while (cleared <= N)
             {
-                if (cleared + invalid == Board.Size)
+                if (cleared + invalid >= cells.Count)
                 {
                     break;
                 }
-                int index = generator.Next(allCells.Count);
+                int index = generator.Next(cells.Count);
 
-                SudokuCell selectedCell = allCells[index];
+                SudokuCell selectedCell = cells[index];
 
                 if (IsOnlyPossibleMove(Board.GetRow(selectedCell), Board.GetColumn(selectedCell), int.Parse(selectedCell.Value)))
                 {
@@ -233,19 +220,20 @@ namespace Sudoku.Models
                 {
                     invalid++;
                 }
-                allCells.Remove(selectedCell);
+                cells.Remove(selectedCell);
             }
-            int ax = cleared + totalCleared;
+            return cleared;
         }
 
         /// <summary>
-        /// 
+        /// checks whether removal of the value is possible move ()
         /// </summary>
         /// <param name="Board"></param>
         /// <param name="row"></param>
         /// <param name="column"></param>
         private bool IsOnlyPossibleMove(int row, int column, int value)
         {
+            // check if here can be another value, if no -> remove the value
             var cellsRow = Board.GetNthRow(row).GetValuesFromCells();
             var cellsCol = Board.GetNthColumn(column).GetValuesFromCells();
             var cellsSquare = Board.GetSquareFromPosition(row, column).GetAllCells().GetValuesFromCells();
@@ -255,7 +243,37 @@ namespace Sudoku.Models
 
             var validValues = this.Board.AllSudokuValues.Except(invalidValues);
 
-            return (validValues.Count() == 1 && validValues.First() == value);
+            if (validValues.Count() == 1 && validValues.First() == value)
+                return true;
+
+            // check if this is the ONLY possible place for value in the square, if yes -> remove the value
+            bool valueCanBeElsewhere = false;
+            SudokuCell cell = Board[row, column];
+            var emptyCellsInSquare = Board.GetSquareFromPosition(row, column).GetAllCells().Where(x => x.IsEmpty()).ToList(); // all empty cells in square
+
+            for (int i = 0; i < emptyCellsInSquare.Count; i++)
+            {
+                var selectedRow = Board.GetNthRow(Board.GetRow(emptyCellsInSquare[i]));
+                var selectedCol = Board.GetNthColumn(Board.GetColumn(emptyCellsInSquare[i]));
+
+                if (selectedRow.Contains(cell))
+                {
+                    selectedRow.Remove(cell);
+                }
+                if (selectedCol.Contains(cell))
+                {
+                    selectedCol.Remove(cell);
+                }
+
+                selectedRow.Add(cell);
+                selectedCol.Add(cell);
+
+                if (selectedRow.IsSudokuValid() && selectedCol.IsSudokuValid())
+                {
+                    valueCanBeElsewhere = true;
+                }
+            }
+            return !valueCanBeElsewhere;
         }
     }
 }
