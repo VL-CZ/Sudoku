@@ -37,8 +37,6 @@ namespace Sudoku.ViewModels
         /// </summary>
         public GameTimer Timer { get; }
 
-        public SudokuSolver Solver { get; }
-
         #endregion
 
         public GameVM(GameDifficulty difficulty)
@@ -46,8 +44,7 @@ namespace Sudoku.ViewModels
             this.difficulty = difficulty;
             Board = new Board();
             Timer = new GameTimer();
-            Solver = new SudokuSolver(Board);
-            Generator = new SudokuGenerator(Board, difficulty, Solver);
+            Generator = new SudokuGenerator(Board, difficulty);
             Manager = new SudokuManager(Board, Generator.SolvedSudokuValues);
         }
     }

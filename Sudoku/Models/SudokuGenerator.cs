@@ -63,15 +63,12 @@ namespace Sudoku.Models
         /// </summary>
         public List<List<int>> SolvedSudokuValues { get; }
 
-        public SudokuSolver Solver { get; }
-
         #endregion
 
-        public SudokuGenerator(Board board, GameDifficulty gameDifficulty, SudokuSolver solver)
+        public SudokuGenerator(Board board, GameDifficulty gameDifficulty)
         {
             difficulty = gameDifficulty;
             Board = board;
-            Solver = solver;
             completeSudokuValues = new List<List<int>>();
             GetValidCompleteSudoku();
 
@@ -162,19 +159,51 @@ namespace Sudoku.Models
             }
 
             var allCells = Board.GetAllCells();
-            for (int i = 0; i < 2*removedValues; i++)
+
+            int cleared = 0;
+            int invalid = 0;
+
+            while (cleared < removedValues)
             {
+                if (cleared + invalid == Board.GetAllCells().Count)
+                {
+                    break;
+                }
                 int index = generator.Next(allCells.Count);
 
                 SudokuCell selectedCell = allCells[index];
 
-                if (Solver.IsOnlyPossibleMove(Board.GetRow(selectedCell), Board.GetColumn(selectedCell), int.Parse(selectedCell.Value)))
+                if (IsOnlyPossibleMove(Board.GetRow(selectedCell), Board.GetColumn(selectedCell), int.Parse(selectedCell.Value)))
                 {
                     selectedCell.ClearValue();
+                    cleared++;
                     allCells.Remove(selectedCell);
+                }
+                else
+                {
+                    invalid++;
                 }
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Board"></param>
+        /// <param name="row"></param>
+        /// <param name="column"></param>
+        private bool IsOnlyPossibleMove(int row, int column, int value)
+        {
+            var cellsRow = Board.GetNthRow(row).GetValuesFromCells();
+            var cellsCol = Board.GetNthColumn(column).GetValuesFromCells();
+            var cellsSquare = Board.GetSquareFromPosition(row, column).GetAllCells().GetValuesFromCells();
+
+            var invalidValues = cellsRow.Union(cellsCol).Union(cellsSquare).ToList();
+            invalidValues.Remove(value);
+
+            var validValues = this.Board.AllSudokuValues.Except(invalidValues);
+
+            return (validValues.Count() == 1 && validValues.First() == value);
+        }
     }
 }
