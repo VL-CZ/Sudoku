@@ -69,22 +69,27 @@ namespace Sudoku.Models
         {
             difficulty = gameDifficulty;
             Board = board;
-            completeSudokuValues = new List<List<int>>();
-            GetValidCompleteSudoku();
 
-            // set SolvedSudokuValues
-            SolvedSudokuValues = new List<List<int>>();
+            do
+            {
+                completeSudokuValues = new List<List<int>>();
+                SolvedSudokuValues = new List<List<int>>();
+                GetValidCompleteSudoku();
+                FillValidValuesToBoard();
+                RemoveValues();
+            } while (Board.EmptyCells() < 50);
+
+        }
+
+        private void FillValidValuesToBoard()
+        {
             for (int i = 0; i < Board.Size; i++)
             {
-                var row = new List<int>();
                 for (int j = 0; j < Board.Size; j++)
                 {
-                    row.Add(int.Parse(Board[i, j].Value));
+                    Board[i, j].Value = completeSudokuValues[i][j].ToString();
                 }
-                SolvedSudokuValues.Add(row);
             }
-
-            RemoveValues();
         }
 
         /// <summary>
@@ -134,6 +139,17 @@ namespace Sudoku.Models
                         break;
                 }
             }
+
+            // set SolvedSudokuValues
+            for (int i = 0; i < Board.Size; i++)
+            {
+                var row = new List<int>();
+                for (int j = 0; j < Board.Size; j++)
+                {
+                    row.Add(int.Parse(Board[i, j].Value));
+                }
+                SolvedSudokuValues.Add(row);
+            }
         }
 
         /// <summary>
@@ -177,12 +193,12 @@ namespace Sudoku.Models
                 {
                     selectedCell.ClearValue();
                     cleared++;
-                    allCells.Remove(selectedCell);
                 }
                 else
                 {
                     invalid++;
                 }
+                allCells.Remove(selectedCell);
             }
         }
 

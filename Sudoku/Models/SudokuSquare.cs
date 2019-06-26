@@ -173,6 +173,8 @@ namespace Sudoku.Models
         /// <param name="values"></param>
         public void FillWithValues(List<int> values)
         {
+            Cells.Clear();
+
             if (!values.HasUniqueValuesInRange(1, numberOfCells))
             {
                 throw new ArgumentException();

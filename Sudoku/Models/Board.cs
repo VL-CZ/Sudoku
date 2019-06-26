@@ -366,5 +366,14 @@ namespace Sudoku.Models
 
             return Squares[squareRow][squareCol];
         }
+
+        /// <summary>
+        /// get number of empty cells
+        /// </summary>
+        /// <returns></returns>
+        public int EmptyCells()
+        {
+            return this.CellCount - FilledCells();
+        }
     }
 }
