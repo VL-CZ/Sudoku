@@ -184,7 +184,7 @@ namespace Sudoku.Models
                 var row = new ObservableCollection<SudokuCell>();
                 for (int j = 0; j < CellsInOneDimension; j++)
                 {
-                    row.Add(new SudokuCell(values[index], false));
+                    row.Add(new SudokuCell(values[index], true));
                     index++;
                 }
                 Cells.Add(row);

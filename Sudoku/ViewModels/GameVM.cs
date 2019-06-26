@@ -25,7 +25,7 @@ namespace Sudoku.ViewModels
         /// <summary>
         /// tool used for hints and detecting boxes with wrong value
         /// </summary>
-        public SudokuSolver Solver { get; }
+        public SudokuManager Solver { get; }
 
         /// <summary>
         /// sudoku board
@@ -45,7 +45,7 @@ namespace Sudoku.ViewModels
             Board = new Board();
             Timer = new GameTimer();
             Generator = new SudokuGenerator(Board, difficulty);
-            Solver = new SudokuSolver(Board, Generator.SolvedSudokuValues);
+            Solver = new SudokuManager(Board, Generator.SolvedSudokuValues);
         }
     }
 }

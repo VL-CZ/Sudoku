@@ -50,10 +50,23 @@ namespace Sudoku.Models
             }
         }
 
+        private bool isDefaultValue;
+
         /// <summary>
         /// is this value default? (player can't change it)
         /// </summary>
-        public bool IsDefaultValue { get; }
+        public bool IsDefaultValue
+        {
+            get
+            {
+                return isDefaultValue;
+            }
+            private set
+            {
+                isDefaultValue = value;
+                RaisePropertyChanged();
+            }
+        }
 
         private Brush background;
 
@@ -124,10 +137,11 @@ namespace Sudoku.Models
         }
 
         /// <summary>
-        /// clear value of this cell
+        /// clear value of this cell and set IsDefaultValue to false
         /// </summary>
         public void ClearValue()
         {
+            IsDefaultValue = false;
             Value = "";
         }
 

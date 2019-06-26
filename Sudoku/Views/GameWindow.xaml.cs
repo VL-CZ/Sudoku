@@ -113,7 +113,7 @@ namespace Sudoku.Views
             {
                 gameVM.Timer.StopTimer();
                 WinnerWindow window = new WinnerWindow(TimeTextBlock.Text);
-                window.Show();
+                window.ShowDialog();
             }
         }
 
