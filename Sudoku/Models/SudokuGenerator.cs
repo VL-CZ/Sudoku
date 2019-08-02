@@ -3,6 +3,7 @@ using Sudoku.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -138,7 +139,7 @@ namespace Sudoku.Models
         }
 
         /// <summary>
-        /// generates valid sudoku grid
+        /// generates valid sudoku grid - remove values from valid filled board
         /// </summary>
         private void RemoveValues()
         {
@@ -200,7 +201,7 @@ namespace Sudoku.Models
 
                 SudokuCell selectedCell = cells[index];
 
-                if (IsOnlyPossibleMove(Board.GetRow(selectedCell), Board.GetColumn(selectedCell), int.Parse(selectedCell.Value)))
+                if (IsPossibleToRemoveValue(selectedCell))
                 {
                     selectedCell.ClearValue();
                     cleared++;
@@ -215,25 +216,20 @@ namespace Sudoku.Models
         }
 
         /// <summary>
-        /// checks whether removal of the value is possible move ()
+        /// checks whether removal of the cell is possible move
         /// </summary>
-        /// <param name="Board"></param>
-        /// <param name="row"></param>
-        /// <param name="column"></param>
-        private bool IsOnlyPossibleMove(int row, int column, int value)
+        /// <param name="cellToRemove"></param>
+        /// <returns></returns>
+        private bool IsPossibleToRemoveValue(SudokuCell cellToRemove)
         {
-            // check if here can be another value, if no -> remove the value
-            var cellsRow = Board.GetNthRow(row).GetValuesFromCells();
-            var cellsCol = Board.GetNthColumn(column).GetValuesFromCells();
-            var cellsSquare = Board.GetSquareFromPosition(row, column).GetAllCells().GetValuesFromCells();
+            int row = Board.GetRow(cellToRemove);
+            int column = Board.GetColumn(cellToRemove);
+            int value = int.Parse(Board[row, column].Value);
 
-            var invalidValues = cellsRow.Union(cellsCol).Union(cellsSquare).ToList();
-            invalidValues.Remove(value);
-
-            var validValues = this.Board.AllSudokuValues.Except(invalidValues);
-
-            if (validValues.Count() == 1 && validValues.First() == value)
+            if (CanCellContainAnotherValue(row, column, value))
+            {
                 return true;
+            }
 
             // check if this is the ONLY possible place for value in the square, if yes -> remove the value
             bool valueCanBeElsewhere = false;
@@ -263,6 +259,72 @@ namespace Sudoku.Models
                 }
             }
             return !valueCanBeElsewhere;
+        }
+
+        /// <summary>
+        /// check if cell can have another value than <paramref name="value"/>
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="column"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        private bool CanCellContainAnotherValue(int row, int column, int value)
+        {
+            // check if here can be another value, if no -> remove the value
+            var cellsRow = Board.GetNthRow(row).GetValuesFromCells();
+            var cellsCol = Board.GetNthColumn(column).GetValuesFromCells();
+            var cellsSquare = Board.GetSquareFromPosition(row, column).GetAllCells().GetValuesFromCells();
+
+            var invalidValues = cellsRow.Union(cellsCol).Union(cellsSquare).ToList();
+            invalidValues.Remove(value);
+
+            var validValues = this.Board.AllSudokuValues.Except(invalidValues);
+
+            if (validValues.Count() == 1 && validValues.First() == value)
+                return true;
+            else
+                return false;
+        }
+
+        private bool ValueCanBeElsewhere(SudokuCell cellWithValue)
+        {
+            if (cellWithValue.IsEmpty())
+            {
+                throw new ArgumentException();
+            }
+            int row = Board.GetRow(cellWithValue);
+            int column = Board.GetColumn(cellWithValue);
+            int value = int.Parse(Board[row, column].Value);
+
+            cellWithValue.ClearValue();
+
+            var emptyRowValues = Board.GetNthRow(row).GetNonEmptyCells();
+            var emptyColumnValues = Board.GetNthColumn(column).GetNonEmptyCells();
+            var emptySquareValues = Board.GetSquareFromPosition(row, column).GetAllCells().GetNonEmptyCells();
+
+            var allValues = new List<List<SudokuCell>>() { emptyRowValues, emptyColumnValues, emptySquareValues };
+
+            // try to place to other places in the row
+            foreach (var selectedValued in allValues)
+            {
+                foreach (SudokuCell selectedCell in emptyRowValues)
+                {
+                    selectedCell.Value = value.ToString();
+                    var cellsRow = Board.GetNthRow(Board.GetRow(selectedCell));
+                    var cellsCol = Board.GetNthColumn(Board.GetColumn(selectedCell));
+                    var cellsSquare = Board.GetSquareFromPosition(Board.GetRow(selectedCell), Board.GetColumn(selectedCell)).GetAllCells();
+
+                    if (cellsRow.IsSudokuValid() || cellsCol.IsSudokuValid() || cellsSquare.IsSudokuValid())
+                    {
+                        selectedCell.ClearValue();
+                        cellWithValue.Value = value.ToString();
+                        return false;
+                    }
+
+                    selectedCell.ClearValue();
+                    cellWithValue.Value = value.ToString();
+                }
+            }
         }
     }
 }

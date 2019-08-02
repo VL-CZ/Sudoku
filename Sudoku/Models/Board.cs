@@ -384,5 +384,21 @@ namespace Sudoku.Models
         {
             return GetAllCells().Where(x => !x.IsEmpty()).ToList();
         }
+
+        public override string ToString()
+        {
+            StringBuilder text = new StringBuilder();
+            for (int i = 0; i < Size; i++)
+            {
+                for (int j = 0; j < Size; j++)
+                {
+                    SudokuCell cell = this[i, j];
+                    string val = cell.IsEmpty() ? "  " : cell.Value + " ";
+                    text.Append(val);
+                }
+                text.Append("\n");
+            }
+            return text.ToString();
+        }
     }
 }

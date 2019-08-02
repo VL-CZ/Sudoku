@@ -12,7 +12,7 @@ namespace Sudoku.Extensions
         /// <summary>
         /// number generator
         /// </summary>
-        private static Random rng = new Random();
+        private static readonly Random rng = new Random();
 
         /// <summary>
         /// checks whether all values are in range <paramref name="min"/> - <paramref name="max"/> exactly once
@@ -68,11 +68,16 @@ namespace Sudoku.Extensions
         public static bool IsSudokuValid(this List<SudokuCell> cells)
         {
             var numbers = cells.Where(x => !x.IsEmpty()).ToList();
-            if (cells.Count == SudokuCell.maxValue && numbers.Count == numbers.Distinct().Count())
+            if (numbers.Count == numbers.Distinct().Count())
             {
                 return true;
             }
             return false;
+        }
+
+        public static List<SudokuCell> GetNonEmptyCells(this List<SudokuCell> cells)
+        {
+            return cells.Where(cell => !cell.IsEmpty()).ToList();
         }
 
         /// <summary>
