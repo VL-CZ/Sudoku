@@ -189,10 +189,11 @@ namespace Sudoku.Models
         {
             int cleared = 0;
             int invalid = 0;
+            int totalCells = cells.Count;
 
             while (cleared < N)
             {
-                if (cleared + invalid >= cells.Count)
+                if (cleared + invalid >= totalCells)
                 {
                     break;
                 }
