@@ -70,12 +70,11 @@ namespace Sudoku.Models
         {
             difficulty = gameDifficulty;
             Board = board;
-
             completeSudokuValues = new List<List<int>>();
             SolvedSudokuValues = new List<List<int>>();
             GetValidCompleteSudoku();
             RemoveValues();
-
+            File.Delete("sudoku.txt");
         }
 
         /// <summary>
@@ -227,7 +226,7 @@ namespace Sudoku.Models
             int column = Board.GetColumn(cellToRemove);
             int value = int.Parse(Board[row, column].Value);
 
-            if (/*CanCellContainAnotherValue(row, column, value) ||*/ !ValueCanBeElsewhere(cellToRemove))
+            if (CanCellContainAnotherValue(row, column, value) || !ValueCanBeElsewhere(cellToRemove))
             {
                 return true;
             }
@@ -306,8 +305,6 @@ namespace Sudoku.Models
             var emptyColumnValues = Board.GetNthColumn(column).GetEmptyCells();
             var emptySquareValues = Board.GetSquareFromPosition(row, column).GetAllCells().GetEmptyCells();
 
-            cellWithValue.Value = String.Empty;
-
             var allValues = new List<List<SudokuCell>>() { emptyRowValues, emptyColumnValues, emptySquareValues };
 
             // try to place value into other cells in the row, column and square
@@ -316,6 +313,7 @@ namespace Sudoku.Models
                 bool isOnlyPlaceForValue = true;
                 foreach (SudokuCell selectedCell in selectedValues)
                 {
+                    cellWithValue.ClearValue();
                     selectedCell.Value = value.ToString();
                     var cellsRow = Board.GetNthRow(Board.GetRow(selectedCell));
                     var cellsCol = Board.GetNthColumn(Board.GetColumn(selectedCell));
@@ -328,6 +326,7 @@ namespace Sudoku.Models
 
                     selectedCell.ClearValue();
                     cellWithValue.Value = value.ToString();
+                    cellWithValue.IsDefaultValue = true;
                 }
                 if (isOnlyPlaceForValue)
                 {

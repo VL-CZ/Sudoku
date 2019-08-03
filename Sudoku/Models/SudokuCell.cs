@@ -61,7 +61,7 @@ namespace Sudoku.Models
             {
                 return isDefaultValue;
             }
-            private set
+            set
             {
                 isDefaultValue = value;
                 RaisePropertyChanged();
