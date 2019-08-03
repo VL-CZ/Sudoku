@@ -159,7 +159,7 @@ namespace Sudoku.Models
                     break;
             }
 
-            int removedInCell = valuesToRemove / Board.Size - 1;
+            int removedInSquare = valuesToRemove / Board.Size;
             int cleared = 0;
 
             var listOfSquares = Board.GetAllSquares();
@@ -168,7 +168,7 @@ namespace Sudoku.Models
             // clear squares
             foreach (SudokuSquare square in listOfSquares)
             {
-                int temp = ClearNRandomCells(square.GetAllNonEmptyCells(), removedInCell);
+                int temp = ClearNRandomCells(square.GetAllNonEmptyCells(), removedInSquare);
                 cleared += temp;
                 valuesToRemove -= temp;
             }
@@ -190,7 +190,7 @@ namespace Sudoku.Models
             int cleared = 0;
             int invalid = 0;
 
-            while (cleared <= N)
+            while (cleared < N)
             {
                 if (cleared + invalid >= cells.Count)
                 {
@@ -226,7 +226,7 @@ namespace Sudoku.Models
             int column = Board.GetColumn(cellToRemove);
             int value = int.Parse(Board[row, column].Value);
 
-            if (CanCellContainAnotherValue(row, column, value) || !ValueCanBeElsewhere(cellToRemove))
+            if (!ValueCanBeElsewhere(cellToRemove) || CanCellContainAnotherValue(row, column, value))
             {
                 return true;
             }
