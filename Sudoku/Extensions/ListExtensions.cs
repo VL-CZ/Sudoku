@@ -67,7 +67,7 @@ namespace Sudoku.Extensions
         /// <returns></returns>
         public static bool IsSudokuValid(this List<SudokuCell> cells)
         {
-            var numbers = cells.Where(x => !x.IsEmpty()).ToList();
+            var numbers = cells.Where(x => !x.IsEmpty()).Select(x => x.Value).ToList();
             if (numbers.Count == numbers.Distinct().Count())
             {
                 return true;
@@ -75,9 +75,9 @@ namespace Sudoku.Extensions
             return false;
         }
 
-        public static List<SudokuCell> GetNonEmptyCells(this List<SudokuCell> cells)
+        public static List<SudokuCell> GetEmptyCells(this List<SudokuCell> cells)
         {
-            return cells.Where(cell => !cell.IsEmpty()).ToList();
+            return cells.Where(cell => cell.IsEmpty()).ToList();
         }
 
         /// <summary>
