@@ -74,7 +74,6 @@ namespace Sudoku.Models
             SolvedSudokuValues = new List<List<int>>();
             GetValidCompleteSudoku();
             RemoveValues();
-            File.Delete("sudoku.txt");
         }
 
         /// <summary>
@@ -204,7 +203,6 @@ namespace Sudoku.Models
                 if (IsPossibleToRemoveValue(selectedCell))
                 {
                     selectedCell.ClearValue();
-                    File.AppendAllText("sudoku.txt", Board + "\n\n");
                     cleared++;
                 }
                 else
