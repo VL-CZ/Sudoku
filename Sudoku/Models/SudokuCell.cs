@@ -40,7 +40,7 @@ namespace Sudoku.Models
             }
             set
             {
-                string stringValue = value.Trim();
+                string stringValue = value?.Trim();
                 if (IsDefaultValue == false && (string.IsNullOrEmpty(stringValue) ||
                     (int.TryParse(stringValue, out int intValue) && intValue >= minValue && intValue <= maxValue)))
                 {
@@ -147,7 +147,7 @@ namespace Sudoku.Models
 
         public override string ToString()
         {
-            return Value.ToString();
+            return Value;
         }
     }
 }

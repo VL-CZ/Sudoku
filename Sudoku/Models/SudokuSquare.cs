@@ -14,11 +14,6 @@ namespace Sudoku.Models
         #region Fields and Properties
 
         /// <summary>
-        /// number generator
-        /// </summary>
-        private readonly static Random generator = new Random();
-
-        /// <summary>
         /// number of cells in the square
         /// </summary>
         private readonly int numberOfCells = 9;
@@ -73,52 +68,6 @@ namespace Sudoku.Models
         }
 
         /// <summary>
-        /// generate empty cell in this square
-        /// </summary>
-        private void GenerateCells()
-        {
-            for (int i = 1; i <= CellsInOneDimension; i++)
-            {
-                var row = new ObservableCollection<SudokuCell>();
-                for (int j = 1; j <= CellsInOneDimension; j++)
-                {
-                    row.Add(new SudokuCell());
-                }
-                Cells.Add(row);
-            }
-
-            //var values = new List<int>();
-            //for (int i = 1; i <= numberOfCells; i++)
-            //{
-            //    values.Add(i);
-            //}
-
-            //for (int i = 1; i <= CellsInOneDimension; i++)
-            //{
-            //    var row = new ObservableCollection<SudokuCell>();
-            //    for (int j = 1; j <= CellsInOneDimension; j++)
-            //    {
-            //        int isGenerated = generator.Next(0, 2);
-            //        SudokuCell cell;
-
-            //        if (isGenerated == 0)
-            //        {
-            //            cell = new SudokuCell();
-            //        }
-            //        else
-            //        {
-            //            int cellValue = values[generator.Next(values.Count)];
-            //            values.Remove(cellValue);
-
-            //            cell = new SudokuCell(cellValue, true);
-            //        }
-            //        row.Add(cell);
-            //    }
-            //    Cells.Add(row);
-            //}
-        }
-
-        /// <summary>
         /// returns number of non-empty cells 
         /// </summary>
         /// <returns></returns>
@@ -138,7 +87,7 @@ namespace Sudoku.Models
         {
             if (N < 0 || N >= CellsInOneDimension)
             {
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentOutOfRangeException($"Value {nameof(N)} is out of range");
             }
             var list = new List<SudokuCell>();
             for (int i = 0; i < CellsInOneDimension; i++)
@@ -177,7 +126,7 @@ namespace Sudoku.Models
 
             if (!values.HasUniqueValuesInRange(1, numberOfCells))
             {
-                throw new ArgumentException();
+                throw new ArgumentException($"Invalid argument: {nameof(values)} doesn't contain every sudoku value exactly once");
             }
 
             int index = 0;

@@ -144,7 +144,7 @@ namespace Sudoku.Models
 
             if (squareRowIndex < 0 || squareRowIndex >= SquaresPerDimension)
             {
-                throw new IndexOutOfRangeException();
+                throw new ArgumentOutOfRangeException($"Value {nameof(N)} is not a valid index of a row");
             }
 
             int squareID = squareRowIndex * SquaresPerDimension + 1;
@@ -178,7 +178,7 @@ namespace Sudoku.Models
 
             if (squareColIndex < 0 || squareColIndex >= SquaresPerDimension)
             {
-                throw new IndexOutOfRangeException();
+                throw new ArgumentOutOfRangeException($"Value {nameof(N)} is not a valid index of a column");
             }
 
             int squareID = squareColIndex + 1;

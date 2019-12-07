@@ -23,7 +23,7 @@ namespace Sudoku.Extensions
         /// <returns></returns>
         public static bool HasUniqueValuesInRange(this List<int> values, int min, int max)
         {
-            if (values.Where(x => (x > max || x < min)).Count() > 0)
+            if (values.Where(x => (x > max || x < min)).Any())
             {
                 return false;
             }

@@ -25,7 +25,7 @@ namespace Sudoku.Views
     /// </summary>
     public partial class GameWindow : Window
     {
-        private GameVM gameVM;
+        private readonly GameVM gameVM;
 
         public GameWindow(GameDifficulty difficulty)
         {
@@ -58,7 +58,7 @@ namespace Sudoku.Views
         {
             MainWindow window = new MainWindow();
             window.Show();
-            this.Close();
+            Close();
         }
 
         /// <summary>
@@ -66,14 +66,17 @@ namespace Sudoku.Views
         /// </summary>
         /// <param name="orig"></param>
         /// <returns></returns>
-        private UIElement CloneElement(UIElement orig)
+        private static UIElement CloneElement(UIElement orig)
         {
             if (orig == null)
                 return (null);
             string s = XamlWriter.Save(orig);
             StringReader stringReader = new StringReader(s);
+
             XmlReader xmlReader = XmlReader.Create(stringReader, new XmlReaderSettings());
-            return (UIElement)XamlReader.Load(xmlReader);
+            UIElement clonedElement = (UIElement)XamlReader.Load(xmlReader);
+            xmlReader.Dispose();
+            return clonedElement;
         }
 
         /// <summary>
@@ -108,7 +111,7 @@ namespace Sudoku.Views
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
-        {     
+        {
             if (gameVM.Manager.IsSolved())
             {
                 gameVM.Timer.StopTimer();

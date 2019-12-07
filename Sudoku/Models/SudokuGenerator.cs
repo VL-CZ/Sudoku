@@ -175,7 +175,7 @@ namespace Sudoku.Models
             var allCells = Board.GetAllNonEmptyCells(); // all non-empty cells
 
             // clear everything else 
-            cleared += ClearNRandomCells(allCells, valuesToRemove);
+            _ = ClearNRandomCells(allCells, valuesToRemove);
         }
 
         /// <summary>
@@ -230,34 +230,7 @@ namespace Sudoku.Models
                 return true;
             }
             return false;
-            // check if this is the ONLY possible place for value in the square, if yes -> remove the value
-            //bool valueCanBeElsewhere = false;
-            //SudokuCell cell = Board[row, column];
-            //var emptyCellsInSquare = Board.GetSquareFromPosition(row, column).GetAllCells().Where(x => x.IsEmpty()).ToList(); // all empty cells in square
-
-            //for (int i = 0; i < emptyCellsInSquare.Count; i++)
-            //{
-            //    var selectedRow = Board.GetNthRow(Board.GetRow(emptyCellsInSquare[i]));
-            //    var selectedCol = Board.GetNthColumn(Board.GetColumn(emptyCellsInSquare[i]));
-
-            //    if (selectedRow.Contains(cell))
-            //    {
-            //        selectedRow.Remove(cell);
-            //    }
-            //    if (selectedCol.Contains(cell))
-            //    {
-            //        selectedCol.Remove(cell);
-            //    }
-
-            //    selectedRow.Add(cell);
-            //    selectedCol.Add(cell);
-
-            //    if (selectedRow.IsSudokuValid() && selectedCol.IsSudokuValid())
-            //    {
-            //        valueCanBeElsewhere = true;
-            //    }
-            //}
-            //return !valueCanBeElsewhere;
+            
         }
 
         /// <summary>
@@ -294,7 +267,7 @@ namespace Sudoku.Models
         {
             if (cellWithValue.IsEmpty())
             {
-                throw new ArgumentException();
+                throw new ArgumentException($"Argument is not valid: {nameof(cellWithValue)} is an empty cell");
             }
             int row = Board.GetRow(cellWithValue);
             int column = Board.GetColumn(cellWithValue);
