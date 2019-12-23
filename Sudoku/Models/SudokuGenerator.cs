@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace Sudoku.Models
 {
+    /// <summary>
+    /// generator of the sudoku
+    /// </summary>
     class SudokuGenerator
     {
         #region Fields and Properties
@@ -179,7 +182,7 @@ namespace Sudoku.Models
         }
 
         /// <summary>
-        /// clear N random cells (if possible) from collection
+        /// clear <paramref name="N"/> random cells (if possible) from collection
         /// </summary>
         /// <param name="cells">collection of cells</param>
         /// <param name="N"></param>
@@ -218,7 +221,7 @@ namespace Sudoku.Models
         /// checks whether removal of the cell is possible move
         /// </summary>
         /// <param name="cellToRemove"></param>
-        /// <returns></returns>
+        /// <returns>Was the removal successful?</returns>
         private bool IsPossibleToRemoveValue(SudokuCell cellToRemove)
         {
             int row = Board.GetRow(cellToRemove);
@@ -259,7 +262,7 @@ namespace Sudoku.Models
         }
 
         /// <summary>
-        /// 
+        /// check if value of <paramref name="cellWithValue"/> can be elsewhere in the board
         /// </summary>
         /// <param name="cellWithValue"></param>
         /// <returns></returns>

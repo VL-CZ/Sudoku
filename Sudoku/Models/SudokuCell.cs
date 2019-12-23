@@ -8,6 +8,9 @@ using System.Windows.Media;
 
 namespace Sudoku.Models
 {
+    /// <summary>
+    /// class representing one cell of the <see cref="Board"/>
+    /// </summary>
     public class SudokuCell : ObservableObject
     {
         #region Fields and Properties

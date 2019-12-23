@@ -10,6 +10,9 @@ using System.Windows;
 
 namespace Sudoku.Models
 {
+    /// <summary>
+    /// class representing sudoku game board
+    /// </summary>
     class Board
     {
         #region Fields and Properties
@@ -116,7 +119,7 @@ namespace Sudoku.Models
         /// get square with specified ID, returns null if ID isn't found
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
+        /// <returns>selected square</returns>
         public SudokuSquare GetSquareByID(int id)
         {
             for (int i = 0; i < SquaresPerDimension; i++)
@@ -305,7 +308,7 @@ namespace Sudoku.Models
         }
 
         /// <summary>
-        /// transponse whole board
+        /// transponse the board
         /// </summary>
         public void Transponse()
         {
@@ -322,7 +325,7 @@ namespace Sudoku.Models
         }
 
         /// <summary>
-        /// get position of cell
+        /// get position of <paramref name="cell"/>
         /// </summary>
         /// <param name="cell">cell to find</param>
         /// <returns>tuple (i,j) -> cell is located at Board[i,j] </returns>
@@ -343,7 +346,7 @@ namespace Sudoku.Models
         }
 
         /// <summary>
-        /// get row of selected cell
+        /// get row of <paramref name="cell"/>
         /// </summary>
         /// <param name="cell"></param>
         /// <returns></returns>
@@ -353,7 +356,7 @@ namespace Sudoku.Models
         }
 
         /// <summary>
-        /// get column of selected cell
+        /// get column of <paramref name="cell"/>
         /// </summary>
         /// <param name="cell"></param>
         /// <returns></returns>
@@ -363,7 +366,7 @@ namespace Sudoku.Models
         }
 
         /// <summary>
-        /// get square which contains cell in selected row and column
+        /// get square which contains cell in selected <paramref name="row"/> and <paramref name="column"/>
         /// </summary>
         /// <param name="row"></param>
         /// <param name="column"></param>

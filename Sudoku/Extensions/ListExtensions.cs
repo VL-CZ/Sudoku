@@ -75,6 +75,11 @@ namespace Sudoku.Extensions
             return false;
         }
 
+        /// <summary>
+        /// get all empty cells
+        /// </summary>
+        /// <param name="cells"></param>
+        /// <returns></returns>
         public static List<SudokuCell> GetEmptyCells(this List<SudokuCell> cells)
         {
             return cells.Where(cell => cell.IsEmpty()).ToList();

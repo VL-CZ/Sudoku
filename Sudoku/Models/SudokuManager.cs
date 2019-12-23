@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Sudoku.Models
 {
+    /// <summary>
+    /// class responsible for additional sudoku operations
+    /// </summary>
     class SudokuManager
     {
         #region Fields and Properties

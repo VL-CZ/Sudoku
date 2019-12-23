@@ -7,6 +7,9 @@ using System.Windows.Threading;
 
 namespace Sudoku.Models
 {
+    /// <summary>
+    /// game timer
+    /// </summary>
     internal class GameTimer : ObservableObject
     {
         #region Fields and Properties

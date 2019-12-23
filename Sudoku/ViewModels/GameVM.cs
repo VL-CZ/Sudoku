@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Sudoku.ViewModels
 {
+    /// <summary>
+    /// Game ViewModel
+    /// </summary>
     class GameVM : BaseVM
     {
         #region Fields and Properties

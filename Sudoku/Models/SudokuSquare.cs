@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Sudoku.Models
 {
+    /// <summary>
+    /// square of the <see cref="Board"/> - contains 3x3 instances of <see cref="SudokuCell"/>
+    /// </summary>
     class SudokuSquare
     {
         #region Fields and Properties
