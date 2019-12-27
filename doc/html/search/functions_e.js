@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['winnerwindow_318',['WinnerWindow',['../class_sudoku_1_1_views_1_1_winner_window.html#a002cea3e84ff26bd9bfc1f707ee12ace',1,'Sudoku::Views::WinnerWindow']]]
+  ['valuecanbeelsewhere_328',['ValueCanBeElsewhere',['../class_sudoku_1_1_models_1_1_sudoku_generator.html#a473d20f85dbcea60c3fb38ec047d6d5d',1,'Sudoku::Models::SudokuGenerator']]]
 ];

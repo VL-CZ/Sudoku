@@ -1,0 +1,9 @@
+<map id="Sudoku::Views::GameWindow" name="Sudoku::Views::GameWindow">
+<area shape="rect" id="node1" title="GameWindow" alt="" coords="295,145,493,560"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,13,73,90"/>
+<area shape="rect" id="node3" title=" " alt="" coords="97,13,280,90"/>
+<area shape="rect" id="node4" title=" " alt="" coords="305,5,483,97"/>
+<area shape="rect" id="node5" title=" " alt="" coords="507,5,686,97"/>
+<area shape="rect" id="node6" title=" " alt="" coords="711,13,861,90"/>
+<area shape="rect" id="node7" title=" " alt="" coords="886,13,1001,90"/>
+</map>

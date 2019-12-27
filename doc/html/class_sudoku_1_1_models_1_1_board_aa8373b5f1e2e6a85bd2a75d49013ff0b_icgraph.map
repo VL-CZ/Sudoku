@@ -1,0 +1,11 @@
+<map id="Sudoku.Models.Board.GetPosition" name="Sudoku.Models.Board.GetPosition">
+<area shape="rect" id="node1" title="get position of cell" alt="" coords="1619,56,1841,83"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_board.html#a61cfc8fbc9ec69a99bb609a0f9c7023a" title="get column of cell" alt="" coords="1352,5,1571,32"/>
+<area shape="rect" id="node8" href="$class_sudoku_1_1_models_1_1_board.html#a266e386821a97dac563cb79c7f247256" title="get row of cell" alt="" coords="1361,56,1561,83"/>
+<area shape="rect" id="node9" href="$class_sudoku_1_1_models_1_1_sudoku_manager.html#ab297e63c3e515bd4aab356d5e6a34a6e" title="execute a hint &#45; fill empty cell" alt="" coords="1354,107,1569,149"/>
+<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#a18fc289407c09a5bc36363174e278732" title="checks whether removal of the cell is possible move" alt="" coords="813,23,1035,65"/>
+<area shape="rect" id="node7" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#a473d20f85dbcea60c3fb38ec047d6d5d" title="check if value of cellWithValue &#160;can be elsewhere in the board" alt="" coords="1083,23,1304,65"/>
+<area shape="rect" id="node4" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#a25272195d06aaca9d88dea333409cae5" title="clear N &#160;random cells (if possible) from collection" alt="" coords="544,23,765,65"/>
+<area shape="rect" id="node5" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#ad006f88dc7583c7f0963070fc1643756" title="generates valid sudoku grid &#45; remove values from valid filled board" alt="" coords="275,23,496,65"/>
+<area shape="rect" id="node6" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#ac8d97518831c64efaf069e546a33806f" title=" " alt="" coords="5,23,227,65"/>
+</map>

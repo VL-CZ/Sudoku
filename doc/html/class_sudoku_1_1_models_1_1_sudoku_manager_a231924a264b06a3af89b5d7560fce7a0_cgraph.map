@@ -1,0 +1,7 @@
+<map id="Sudoku.Models.SudokuManager.ClearWrongValues" name="Sudoku.Models.SudokuManager.ClearWrongValues">
+<area shape="rect" id="node1" title="clear wrongly filled sudoku cells" alt="" coords="5,71,220,112"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_sudoku_cell.html#a468a181f32df70a8be284246b642c0f6" title="clear value of this cell and set IsDefaultValue to false" alt="" coords="282,5,469,47"/>
+<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_sudoku_manager.html#ab1ab83ee114c3fb8bc137d938f8f65a8" title="retrieve all incorrectly filled sudoku cells" alt="" coords="268,71,483,112"/>
+<area shape="rect" id="node4" href="$class_sudoku_1_1_models_1_1_sudoku_cell.html#a32afb62bebe3dc7b70cda9f2fbf68064" title="remove highlight" alt="" coords="282,136,469,177"/>
+<area shape="rect" id="node5" href="$class_sudoku_1_1_models_1_1_observable_object.html#a3e65d4cfd79b06251825a6754b101665" title=" " alt="" coords="531,136,728,177"/>
+</map>

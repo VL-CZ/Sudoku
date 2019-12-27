@@ -1,0 +1,8 @@
+<map id="Sudoku.Models.Board.GetRow" name="Sudoku.Models.Board.GetRow">
+<area shape="rect" id="node1" title="get row of cell" alt="" coords="1352,13,1552,39"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#a18fc289407c09a5bc36363174e278732" title="checks whether removal of the cell is possible move" alt="" coords="813,5,1035,47"/>
+<area shape="rect" id="node6" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#a473d20f85dbcea60c3fb38ec047d6d5d" title="check if value of cellWithValue &#160;can be elsewhere in the board" alt="" coords="1083,35,1304,76"/>
+<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#a25272195d06aaca9d88dea333409cae5" title="clear N &#160;random cells (if possible) from collection" alt="" coords="544,5,765,47"/>
+<area shape="rect" id="node4" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#ad006f88dc7583c7f0963070fc1643756" title="generates valid sudoku grid &#45; remove values from valid filled board" alt="" coords="275,5,496,47"/>
+<area shape="rect" id="node5" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#ac8d97518831c64efaf069e546a33806f" title=" " alt="" coords="5,5,227,47"/>
+</map>

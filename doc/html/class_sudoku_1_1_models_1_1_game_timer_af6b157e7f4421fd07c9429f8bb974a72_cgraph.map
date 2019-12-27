@@ -1,0 +1,4 @@
+<map id="Sudoku.Models.GameTimer.StopTimer" name="Sudoku.Models.GameTimer.StopTimer">
+<area shape="rect" id="node1" title="stop measuring time" alt="" coords="5,5,192,47"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_game_timer.html#aef0aed462a9eb3c01a3f63f4e27845e3" title="method that is invoked on timer_tick event" alt="" coords="240,5,427,47"/>
+</map>

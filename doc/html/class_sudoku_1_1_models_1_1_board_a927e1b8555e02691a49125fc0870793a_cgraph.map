@@ -1,0 +1,4 @@
+<map id="Sudoku.Models.Board.GetAllNonEmptyCells" name="Sudoku.Models.Board.GetAllNonEmptyCells">
+<area shape="rect" id="node1" title="get all non&#45;empty cells" alt="" coords="5,5,196,47"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_board.html#a0a05dbf6763b611c419933d72144a326" title="get all squares on the board in 1&#45;dimensional list" alt="" coords="244,5,435,47"/>
+</map>

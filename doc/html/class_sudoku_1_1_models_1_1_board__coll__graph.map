@@ -1,0 +1,3 @@
+<map id="Sudoku.Models.Board" name="Sudoku.Models.Board">
+<area shape="rect" id="node1" title="class representing sudoku game board" alt="" coords="5,5,175,332"/>
+</map>

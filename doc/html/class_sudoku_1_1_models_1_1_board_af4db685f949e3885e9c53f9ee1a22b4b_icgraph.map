@@ -1,0 +1,5 @@
+<map id="Sudoku.Models.Board.FilledCellsCount" name="Sudoku.Models.Board.FilledCellsCount">
+<area shape="rect" id="node1" title="get number of non&#45;empty cells" alt="" coords="268,39,453,80"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_board.html#a979bc0c4e419dea9a6bb59c2f45ffdf1" title="get number of empty cells" alt="" coords="17,5,209,47"/>
+<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_sudoku_manager.html#afe257e012e3af810dd3cf1f92987a77a" title="checks if sudoku is solved" alt="" coords="5,71,220,112"/>
+</map>

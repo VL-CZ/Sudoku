@@ -3,7 +3,9 @@ var dir_4daf8ea994619aec4b5fb0faa32a6b5e =
     [ "Board.cs", "_board_8cs.html", [
       [ "Board", "class_sudoku_1_1_models_1_1_board.html", "class_sudoku_1_1_models_1_1_board" ]
     ] ],
-    [ "GameTimer.cs", "_game_timer_8cs.html", null ],
+    [ "GameTimer.cs", "_game_timer_8cs.html", [
+      [ "GameTimer", "class_sudoku_1_1_models_1_1_game_timer.html", "class_sudoku_1_1_models_1_1_game_timer" ]
+    ] ],
     [ "ObservableObject.cs", "_observable_object_8cs.html", [
       [ "ObservableObject", "class_sudoku_1_1_models_1_1_observable_object.html", "class_sudoku_1_1_models_1_1_observable_object" ]
     ] ],

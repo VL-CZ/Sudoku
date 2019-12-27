@@ -1,0 +1,8 @@
+<map id="Sudoku.Models.Board.GetAllSquares" name="Sudoku.Models.Board.GetAllSquares">
+<area shape="rect" id="node1" title="get all squares on the board in 1&#45;dimensional list" alt="" coords="544,73,735,115"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_board.html#af4db685f949e3885e9c53f9ee1a22b4b" title="get number of non&#45;empty cells" alt="" coords="293,15,478,56"/>
+<area shape="rect" id="node4" href="$class_sudoku_1_1_models_1_1_sudoku_manager.html#afe257e012e3af810dd3cf1f92987a77a" title="checks if sudoku is solved" alt="" coords="9,71,223,112"/>
+<area shape="rect" id="node5" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#ad006f88dc7583c7f0963070fc1643756" title="generates valid sudoku grid &#45; remove values from valid filled board" alt="" coords="275,133,496,175"/>
+<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_board.html#a979bc0c4e419dea9a6bb59c2f45ffdf1" title="get number of empty cells" alt="" coords="20,5,212,47"/>
+<area shape="rect" id="node6" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#ac8d97518831c64efaf069e546a33806f" title=" " alt="" coords="5,136,227,177"/>
+</map>

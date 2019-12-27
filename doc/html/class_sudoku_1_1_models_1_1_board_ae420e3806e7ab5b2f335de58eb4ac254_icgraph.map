@@ -1,0 +1,13 @@
+<map id="Sudoku.Models.Board.GetNthColumn" name="Sudoku.Models.Board.GetNthColumn">
+<area shape="rect" id="node1" title="Get N&#45;th column from the board (indexes start from 0)" alt="" coords="1352,104,1547,145"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#a20c61dffe650c7548146cdeef2554218" title="check if cell can have another value than value" alt="" coords="1083,5,1304,47"/>
+<area shape="rect" id="node7" href="$class_sudoku_1_1_models_1_1_sudoku_manager.html#afe257e012e3af810dd3cf1f92987a77a" title="checks if sudoku is solved" alt="" coords="1086,71,1301,112"/>
+<area shape="rect" id="node8" href="$class_sudoku_1_1_models_1_1_board.html#a858dd15899574693b2e76989111c25f1" title="swap columns with selected indexes" alt="" coords="1100,201,1287,243"/>
+<area shape="rect" id="node11" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#a473d20f85dbcea60c3fb38ec047d6d5d" title="check if value of cellWithValue &#160;can be elsewhere in the board" alt="" coords="1083,136,1304,177"/>
+<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#a18fc289407c09a5bc36363174e278732" title="checks whether removal of the cell is possible move" alt="" coords="813,107,1035,148"/>
+<area shape="rect" id="node4" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#a25272195d06aaca9d88dea333409cae5" title="clear N &#160;random cells (if possible) from collection" alt="" coords="544,107,765,148"/>
+<area shape="rect" id="node5" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#ad006f88dc7583c7f0963070fc1643756" title="generates valid sudoku grid &#45; remove values from valid filled board" alt="" coords="275,109,496,151"/>
+<area shape="rect" id="node6" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#ac8d97518831c64efaf069e546a33806f" title=" " alt="" coords="5,140,227,181"/>
+<area shape="rect" id="node9" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#accc1c663d947c84a3432c414dc636cbc" title="get random valid completed sudoku grid" alt="" coords="544,172,765,213"/>
+<area shape="rect" id="node10" href="$class_sudoku_1_1_models_1_1_board.html#a6ecf632125a8c4f6387c0df2f1fbece9" title="swap columns of squares" alt="" coords="831,227,1017,268"/>
+</map>

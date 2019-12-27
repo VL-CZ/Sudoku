@@ -1,0 +1,7 @@
+<map id="Sudoku.Models.Board.SwapRows" name="Sudoku.Models.Board.SwapRows">
+<area shape="rect" id="node1" title="swap rows with selected indexes" alt="" coords="5,71,224,98"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_board.html#a6d2da1548f1984ca6822786de7da4245" title="Get N&#45;th row from the board (row indexes start from 0)" alt="" coords="272,42,492,69"/>
+<area shape="rect" id="node5" href="$class_sudoku_1_1_models_1_1_board.html#a9c09cf937d4cb77b62f9e83721e2352e" title="swap values of the cells" alt="" coords="289,93,475,135"/>
+<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_sudoku_square.html#ad96aa1288b17bc777e17984c9981c3ea" title="get all cells in N&#45;th row or column" alt="" coords="559,5,765,47"/>
+<area shape="rect" id="node4" href="$class_sudoku_1_1_models_1_1_board.html#a736fb313d973f10d35566ec97e687ef9" title="get square with specified ID, returns null if ID isn&#39;t found" alt="" coords="540,71,784,98"/>
+</map>

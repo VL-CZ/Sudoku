@@ -1,0 +1,8 @@
+<map id="Sudoku.Models.SudokuManager.ShowWrongValues" name="Sudoku.Models.SudokuManager.ShowWrongValues">
+<area shape="rect" id="node1" title="highlight wrongly filled sudoku cells" alt="" coords="5,104,220,145"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_board.html#a0a05dbf6763b611c419933d72144a326" title="get all squares on the board in 1&#45;dimensional list" alt="" coords="280,5,471,47"/>
+<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_sudoku_manager.html#ab1ab83ee114c3fb8bc137d938f8f65a8" title="retrieve all incorrectly filled sudoku cells" alt="" coords="268,71,483,112"/>
+<area shape="rect" id="node4" href="$class_sudoku_1_1_models_1_1_sudoku_cell.html#a08cba2adf8fbc73d3dbbddbf069d8b67" title="hightlight this cell (set background to red)" alt="" coords="282,136,469,177"/>
+<area shape="rect" id="node5" href="$class_sudoku_1_1_models_1_1_sudoku_cell.html#a32afb62bebe3dc7b70cda9f2fbf68064" title="remove highlight" alt="" coords="282,201,469,243"/>
+<area shape="rect" id="node6" href="$class_sudoku_1_1_models_1_1_observable_object.html#a3e65d4cfd79b06251825a6754b101665" title=" " alt="" coords="531,201,728,243"/>
+</map>

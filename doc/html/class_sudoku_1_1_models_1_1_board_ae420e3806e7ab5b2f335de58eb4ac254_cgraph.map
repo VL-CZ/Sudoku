@@ -1,0 +1,5 @@
+<map id="Sudoku.Models.Board.GetNthColumn" name="Sudoku.Models.Board.GetNthColumn">
+<area shape="rect" id="node1" title="Get N&#45;th column from the board (indexes start from 0)" alt="" coords="5,35,200,76"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_sudoku_square.html#ad96aa1288b17bc777e17984c9981c3ea" title="get all cells in N&#45;th row or column" alt="" coords="267,5,473,47"/>
+<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_board.html#a736fb313d973f10d35566ec97e687ef9" title="get square with specified ID, returns null if ID isn&#39;t found" alt="" coords="248,71,492,98"/>
+</map>

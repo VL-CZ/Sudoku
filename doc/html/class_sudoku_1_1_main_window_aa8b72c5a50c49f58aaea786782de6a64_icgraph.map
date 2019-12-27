@@ -1,0 +1,4 @@
+<map id="Sudoku::MainWindow::NormalGameButton_Click" name="Sudoku::MainWindow::NormalGameButton_Click">
+<area shape="rect" id="node1" title="play normal sudoku" alt="" coords="201,5,381,47"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_main_window.html#a9ac0a389d0183e38a619b5f2ce4148dc" title=" " alt="" coords="5,5,153,47"/>
+</map>

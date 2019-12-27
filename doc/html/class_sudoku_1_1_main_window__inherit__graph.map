@@ -1,0 +1,6 @@
+<map id="Sudoku::MainWindow" name="Sudoku::MainWindow">
+<area shape="rect" id="node1" title="Interaction logic for MainWindow.xaml" alt="" coords="12,131,200,443"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,73,83"/>
+<area shape="rect" id="node3" title=" " alt="" coords="97,5,248,83"/>
+<area shape="rect" id="node4" title=" " alt="" coords="273,5,387,83"/>
+</map>

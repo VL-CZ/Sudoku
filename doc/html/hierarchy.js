@@ -9,7 +9,6 @@ var hierarchy =
       [ "Sudoku::Properties::Settings", "class_sudoku_1_1_properties_1_1_settings.html", null ]
     ] ],
     [ "Sudoku.Models.Board", "class_sudoku_1_1_models_1_1_board.html", null ],
-    [ "Sudoku.ViewModels.GameVM", "class_sudoku_1_1_view_models_1_1_game_v_m.html", null ],
     [ "IComponentConnector", null, [
       [ "Sudoku::MainWindow", "class_sudoku_1_1_main_window.html", null ],
       [ "Sudoku::MainWindow", "class_sudoku_1_1_main_window.html", null ],
@@ -23,7 +22,11 @@ var hierarchy =
     ] ],
     [ "INotifyPropertyChanged", null, [
       [ "Sudoku.Models.ObservableObject", "class_sudoku_1_1_models_1_1_observable_object.html", [
-        [ "Sudoku.Models.SudokuCell", "class_sudoku_1_1_models_1_1_sudoku_cell.html", null ]
+        [ "Sudoku.Models.GameTimer", "class_sudoku_1_1_models_1_1_game_timer.html", null ],
+        [ "Sudoku.Models.SudokuCell", "class_sudoku_1_1_models_1_1_sudoku_cell.html", null ],
+        [ "Sudoku.ViewModels.BaseVM", "class_sudoku_1_1_view_models_1_1_base_v_m.html", [
+          [ "Sudoku.ViewModels.GameVM", "class_sudoku_1_1_view_models_1_1_game_v_m.html", null ]
+        ] ]
       ] ]
     ] ],
     [ "IStyleConnector", null, [

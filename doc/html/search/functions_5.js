@@ -1,7 +1,22 @@
 var searchData=
 [
-  ['hardgamebutton_5fclick_281',['HardGameButton_Click',['../class_sudoku_1_1_main_window.html#afb00bfbaa172eaf1ac3eddf63adde776',1,'Sudoku::MainWindow']]],
-  ['hasallsudokuvalues_282',['HasAllSudokuValues',['../class_sudoku_1_1_extensions_1_1_list_extensions.html#a86c90e518b2024a58998e0f6957d0362',1,'Sudoku::Extensions::ListExtensions']]],
-  ['hasuniquevaluesinrange_283',['HasUniqueValuesInRange',['../class_sudoku_1_1_extensions_1_1_list_extensions.html#aa90af791b1e7c0a788ccb6bd6a7452f8',1,'Sudoku::Extensions::ListExtensions']]],
-  ['highlight_284',['HighLight',['../class_sudoku_1_1_models_1_1_sudoku_cell.html#a08cba2adf8fbc73d3dbbddbf069d8b67',1,'Sudoku::Models::SudokuCell']]]
+  ['gametimer_272',['GameTimer',['../class_sudoku_1_1_models_1_1_game_timer.html#af1a2bab847959f00ba61f88376e2e064',1,'Sudoku::Models::GameTimer']]],
+  ['gamevm_273',['GameVM',['../class_sudoku_1_1_view_models_1_1_game_v_m.html#a774d54702170713d28df390d65b8a872',1,'Sudoku::ViewModels::GameVM']]],
+  ['gamewindow_274',['GameWindow',['../class_sudoku_1_1_views_1_1_game_window.html#a44af52ed1d20caca9238b5f225180932',1,'Sudoku::Views::GameWindow']]],
+  ['getallcells_275',['GetAllCells',['../class_sudoku_1_1_models_1_1_board.html#a0a05dbf6763b611c419933d72144a326',1,'Sudoku.Models.Board.GetAllCells()'],['../class_sudoku_1_1_models_1_1_sudoku_square.html#ace018e0efcc29bae5d6d52d3505ace8d',1,'Sudoku.Models.SudokuSquare.GetAllCells()']]],
+  ['getallnonemptycells_276',['GetAllNonEmptyCells',['../class_sudoku_1_1_models_1_1_board.html#a927e1b8555e02691a49125fc0870793a',1,'Sudoku.Models.Board.GetAllNonEmptyCells()'],['../class_sudoku_1_1_models_1_1_sudoku_square.html#a9a5e2548e588412eb30a17533b568bdf',1,'Sudoku.Models.SudokuSquare.GetAllNonEmptyCells()']]],
+  ['getallsquares_277',['GetAllSquares',['../class_sudoku_1_1_models_1_1_board.html#a46fc3de74db5e5286e60afd9dcf8778b',1,'Sudoku::Models::Board']]],
+  ['getcolumn_278',['GetColumn',['../class_sudoku_1_1_models_1_1_board.html#a61cfc8fbc9ec69a99bb609a0f9c7023a',1,'Sudoku::Models::Board']]],
+  ['getemptycells_279',['GetEmptyCells',['../class_sudoku_1_1_extensions_1_1_list_extensions.html#a33bb2068eb81ad9e322f97ca7e132e69',1,'Sudoku::Extensions::ListExtensions']]],
+  ['getnthcolumn_280',['GetNthColumn',['../class_sudoku_1_1_models_1_1_board.html#ae420e3806e7ab5b2f335de58eb4ac254',1,'Sudoku::Models::Board']]],
+  ['getnthrow_281',['GetNthRow',['../class_sudoku_1_1_models_1_1_board.html#a6d2da1548f1984ca6822786de7da4245',1,'Sudoku::Models::Board']]],
+  ['getnthroworcolumn_282',['GetNThRowOrColumn',['../class_sudoku_1_1_models_1_1_sudoku_square.html#ad96aa1288b17bc777e17984c9981c3ea',1,'Sudoku::Models::SudokuSquare']]],
+  ['getposition_283',['GetPosition',['../class_sudoku_1_1_models_1_1_board.html#aa8373b5f1e2e6a85bd2a75d49013ff0b',1,'Sudoku::Models::Board']]],
+  ['getrow_284',['GetRow',['../class_sudoku_1_1_models_1_1_board.html#a266e386821a97dac563cb79c7f247256',1,'Sudoku::Models::Board']]],
+  ['getsquarebyid_285',['GetSquareByID',['../class_sudoku_1_1_models_1_1_board.html#a736fb313d973f10d35566ec97e687ef9',1,'Sudoku::Models::Board']]],
+  ['getsquarefromposition_286',['GetSquareFromPosition',['../class_sudoku_1_1_models_1_1_board.html#afd923cb84e9a5111be8a04536655a0a0',1,'Sudoku::Models::Board']]],
+  ['getvalidcompletedsudoku_287',['GetValidCompletedSudoku',['../class_sudoku_1_1_extensions_1_1_list_extensions.html#a08dea5cc05833f1d781e6d0801d16c08',1,'Sudoku::Extensions::ListExtensions']]],
+  ['getvalidcompletesudoku_288',['GetValidCompleteSudoku',['../class_sudoku_1_1_models_1_1_sudoku_generator.html#accc1c663d947c84a3432c414dc636cbc',1,'Sudoku::Models::SudokuGenerator']]],
+  ['getvaluesfromcells_289',['GetValuesFromCells',['../class_sudoku_1_1_extensions_1_1_list_extensions.html#a90955a959eb87d870adae7db7870d52b',1,'Sudoku::Extensions::ListExtensions']]],
+  ['getwrongvalues_290',['GetWrongValues',['../class_sudoku_1_1_models_1_1_sudoku_manager.html#ab1ab83ee114c3fb8bc137d938f8f65a8',1,'Sudoku::Models::SudokuManager']]]
 ];

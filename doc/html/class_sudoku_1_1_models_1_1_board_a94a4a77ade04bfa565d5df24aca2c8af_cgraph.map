@@ -1,0 +1,4 @@
+<map id="Sudoku.Models.Board.ToString" name="Sudoku.Models.Board.ToString">
+<area shape="rect" id="node1" title=" " alt="" coords="5,13,208,39"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_sudoku_cell.html#acd32c82bae4f738d6c9300460f21f5aa" title="checks whether this cell is empty" alt="" coords="256,5,443,47"/>
+</map>

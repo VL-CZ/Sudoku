@@ -2,7 +2,7 @@
 
 namespace Sudoku.ViewModels
 {
-    internal class BaseVM : ObservableObject
+    class BaseVM : ObservableObject
     {
     }
 }

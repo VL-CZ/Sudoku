@@ -1,0 +1,14 @@
+<map id="Sudoku.Models.SudokuGenerator.ValueCanBeElsewhere" name="Sudoku.Models.SudokuGenerator.ValueCanBeElsewhere">
+<area shape="rect" id="node1" title="check if value of cellWithValue &#160;can be elsewhere in the board" alt="" coords="5,209,227,251"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_sudoku_cell.html#a468a181f32df70a8be284246b642c0f6" title="clear value of this cell and set IsDefaultValue to false" alt="" coords="291,5,478,47"/>
+<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_sudoku_square.html#ace018e0efcc29bae5d6d52d3505ace8d" title="get all sudoku cells in this sudoku square in 1&#45;dimensional List" alt="" coords="282,71,487,112"/>
+<area shape="rect" id="node4" href="$class_sudoku_1_1_models_1_1_board.html#a61cfc8fbc9ec69a99bb609a0f9c7023a" title="get column of cell" alt="" coords="275,137,494,163"/>
+<area shape="rect" id="node6" href="$class_sudoku_1_1_models_1_1_board.html#ae420e3806e7ab5b2f335de58eb4ac254" title="Get N&#45;th column from the board (indexes start from 0)" alt="" coords="287,239,482,280"/>
+<area shape="rect" id="node9" href="$class_sudoku_1_1_models_1_1_board.html#a6d2da1548f1984ca6822786de7da4245" title="Get N&#45;th row from the board (row indexes start from 0)" alt="" coords="275,305,495,331"/>
+<area shape="rect" id="node10" href="$class_sudoku_1_1_models_1_1_board.html#a266e386821a97dac563cb79c7f247256" title="get row of cell" alt="" coords="285,187,485,214"/>
+<area shape="rect" id="node11" href="$class_sudoku_1_1_models_1_1_board.html#afd923cb84e9a5111be8a04536655a0a0" title="get square which contains cell in selected row &#160;and column" alt="" coords="277,356,493,397"/>
+<area shape="rect" id="node12" href="$class_sudoku_1_1_models_1_1_sudoku_cell.html#acd32c82bae4f738d6c9300460f21f5aa" title="checks whether this cell is empty" alt="" coords="291,421,478,463"/>
+<area shape="rect" id="node5" href="$class_sudoku_1_1_models_1_1_board.html#aa8373b5f1e2e6a85bd2a75d49013ff0b" title="get position of cell" alt="" coords="553,162,776,189"/>
+<area shape="rect" id="node7" href="$class_sudoku_1_1_models_1_1_sudoku_square.html#ad96aa1288b17bc777e17984c9981c3ea" title="get all cells in N&#45;th row or column" alt="" coords="562,297,767,339"/>
+<area shape="rect" id="node8" href="$class_sudoku_1_1_models_1_1_board.html#a736fb313d973f10d35566ec97e687ef9" title="get square with specified ID, returns null if ID isn&#39;t found" alt="" coords="543,246,787,273"/>
+</map>

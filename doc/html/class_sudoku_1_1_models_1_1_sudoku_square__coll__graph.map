@@ -1,0 +1,3 @@
+<map id="Sudoku.Models.SudokuSquare" name="Sudoku.Models.SudokuSquare">
+<area shape="rect" id="node1" title="square of the Board &#45; contains 3x3 instances of SudokuCell" alt="" coords="5,5,207,229"/>
+</map>

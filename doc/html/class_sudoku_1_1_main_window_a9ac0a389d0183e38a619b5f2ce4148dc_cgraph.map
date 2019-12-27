@@ -1,0 +1,7 @@
+<map id="Sudoku::MainWindow::Connect" name="Sudoku::MainWindow::Connect">
+<area shape="rect" id="node1" title=" " alt="" coords="5,104,153,145"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_main_window.html#a3b5731f466d4cb3e0a3540fbd2e99973" title="close app" alt="" coords="211,5,371,47"/>
+<area shape="rect" id="node3" href="$class_sudoku_1_1_main_window.html#ac85a9a9e96cde2f02d716cc8dfadd857" title="play easy sudoku" alt="" coords="207,71,376,112"/>
+<area shape="rect" id="node4" href="$class_sudoku_1_1_main_window.html#afb00bfbaa172eaf1ac3eddf63adde776" title="play hard sudoku" alt="" coords="208,136,375,177"/>
+<area shape="rect" id="node5" href="$class_sudoku_1_1_main_window.html#aa8b72c5a50c49f58aaea786782de6a64" title="play normal sudoku" alt="" coords="201,201,381,243"/>
+</map>

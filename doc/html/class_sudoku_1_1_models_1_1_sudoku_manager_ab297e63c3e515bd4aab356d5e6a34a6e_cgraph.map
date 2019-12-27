@@ -1,0 +1,5 @@
+<map id="Sudoku.Models.SudokuManager.ShowHint" name="Sudoku.Models.SudokuManager.ShowHint">
+<area shape="rect" id="node1" title="execute a hint &#45; fill empty cell" alt="" coords="5,35,220,76"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_board.html#a0a05dbf6763b611c419933d72144a326" title="get all squares on the board in 1&#45;dimensional list" alt="" coords="284,5,475,47"/>
+<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_board.html#aa8373b5f1e2e6a85bd2a75d49013ff0b" title="get position of cell" alt="" coords="268,71,491,98"/>
+</map>

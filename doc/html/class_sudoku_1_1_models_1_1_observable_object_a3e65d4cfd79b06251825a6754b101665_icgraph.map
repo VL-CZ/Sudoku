@@ -1,0 +1,6 @@
+<map id="Sudoku.Models.ObservableObject.RaisePropertyChanged" name="Sudoku.Models.ObservableObject.RaisePropertyChanged">
+<area shape="rect" id="node1" title=" " alt="" coords="503,39,700,80"/>
+<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_sudoku_cell.html#a32afb62bebe3dc7b70cda9f2fbf68064" title="remove highlight" alt="" coords="268,39,455,80"/>
+<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_sudoku_manager.html#a231924a264b06a3af89b5d7560fce7a0" title="clear wrongly filled sudoku cells" alt="" coords="5,5,220,47"/>
+<area shape="rect" id="node4" href="$class_sudoku_1_1_models_1_1_sudoku_manager.html#ad8fa43455d9294c373b34fe9903d942e" title="highlight wrongly filled sudoku cells" alt="" coords="5,71,220,112"/>
+</map>
