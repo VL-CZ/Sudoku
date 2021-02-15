@@ -1,4 +1,0 @@
-<map id="Sudoku.Models.Board.GetRow" name="Sudoku.Models.Board.GetRow">
-<area shape="rect" id="node1" title="get row of cell" alt="" coords="5,5,205,32"/>
-<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_board.html#aa8373b5f1e2e6a85bd2a75d49013ff0b" title="get position of cell" alt="" coords="253,5,476,32"/>
-</map>

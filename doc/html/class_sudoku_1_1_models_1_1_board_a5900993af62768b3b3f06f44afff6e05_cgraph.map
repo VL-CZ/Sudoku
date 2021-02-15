@@ -1,4 +1,0 @@
-<map id="Sudoku.Models.Board.Transponse" name="Sudoku.Models.Board.Transponse">
-<area shape="rect" id="node1" title="transponse the board" alt="" coords="5,13,227,39"/>
-<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_board.html#a9c09cf937d4cb77b62f9e83721e2352e" title="swap values of the cells" alt="" coords="275,5,461,47"/>
-</map>

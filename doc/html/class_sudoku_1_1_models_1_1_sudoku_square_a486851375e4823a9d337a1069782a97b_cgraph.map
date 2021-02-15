@@ -1,4 +1,0 @@
-<map id="Sudoku.Models.SudokuSquare.FilledCells" name="Sudoku.Models.SudokuSquare.FilledCells">
-<area shape="rect" id="node1" title="returns number of non&#45;empty cells" alt="" coords="5,5,211,47"/>
-<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_sudoku_square.html#ace018e0efcc29bae5d6d52d3505ace8d" title="get all sudoku cells in this sudoku square in 1&#45;dimensional List" alt="" coords="259,5,464,47"/>
-</map>

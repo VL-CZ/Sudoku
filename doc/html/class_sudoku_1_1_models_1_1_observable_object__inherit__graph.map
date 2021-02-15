@@ -1,8 +1,0 @@
-<map id="Sudoku.Models.ObservableObject" name="Sudoku.Models.ObservableObject">
-<area shape="rect" id="node1" title=" " alt="" coords="213,131,393,223"/>
-<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_game_timer.html" title="game timer" alt="" coords="5,329,188,495"/>
-<area shape="rect" id="node4" href="$class_sudoku_1_1_models_1_1_sudoku_cell.html" title="class representing one cell of the Board" alt="" coords="212,271,395,553"/>
-<area shape="rect" id="node5" href="$class_sudoku_1_1_view_models_1_1_base_v_m.html" title=" " alt="" coords="419,373,614,451"/>
-<area shape="rect" id="node2" title=" " alt="" coords="224,5,383,83"/>
-<area shape="rect" id="node6" href="$class_sudoku_1_1_view_models_1_1_game_v_m.html" title="Game ViewModel" alt="" coords="417,601,616,737"/>
-</map>

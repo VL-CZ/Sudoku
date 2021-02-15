@@ -1,9 +1,0 @@
-<map id="Sudoku.Models.SudokuManager.IsSolved" name="Sudoku.Models.SudokuManager.IsSolved">
-<area shape="rect" id="node1" title="checks if sudoku is solved" alt="" coords="5,68,220,109"/>
-<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_board.html#af4db685f949e3885e9c53f9ee1a22b4b" title="get number of non&#45;empty cells" alt="" coords="285,35,471,76"/>
-<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_board.html#a46fc3de74db5e5286e60afd9dcf8778b" title="get all squares on the board in 1&#45;dimensional list" alt="" coords="563,5,753,47"/>
-<area shape="rect" id="node4" href="$class_sudoku_1_1_models_1_1_board.html#ae420e3806e7ab5b2f335de58eb4ac254" title="Get N&#45;th column from the board (indexes start from 0)" alt="" coords="281,100,475,141"/>
-<area shape="rect" id="node7" href="$class_sudoku_1_1_models_1_1_board.html#a6d2da1548f1984ca6822786de7da4245" title="Get N&#45;th row from the board (row indexes start from 0)" alt="" coords="268,166,488,193"/>
-<area shape="rect" id="node5" href="$class_sudoku_1_1_models_1_1_sudoku_square.html#ad96aa1288b17bc777e17984c9981c3ea" title="get all cells in N&#45;th row or column" alt="" coords="555,159,761,200"/>
-<area shape="rect" id="node6" href="$class_sudoku_1_1_models_1_1_board.html#a736fb313d973f10d35566ec97e687ef9" title="get square with specified ID, returns null if ID isn&#39;t found" alt="" coords="536,107,780,134"/>
-</map>

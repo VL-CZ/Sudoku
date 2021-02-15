@@ -1,5 +1,0 @@
-<map id="Sudoku.Models.SudokuManager.GetWrongValues" name="Sudoku.Models.SudokuManager.GetWrongValues">
-<area shape="rect" id="node1" title="retrieve all incorrectly filled sudoku cells" alt="" coords="268,39,483,80"/>
-<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_sudoku_manager.html#a231924a264b06a3af89b5d7560fce7a0" title="clear wrongly filled sudoku cells" alt="" coords="5,5,220,47"/>
-<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_sudoku_manager.html#ad8fa43455d9294c373b34fe9903d942e" title="highlight wrongly filled sudoku cells" alt="" coords="5,71,220,112"/>
-</map>

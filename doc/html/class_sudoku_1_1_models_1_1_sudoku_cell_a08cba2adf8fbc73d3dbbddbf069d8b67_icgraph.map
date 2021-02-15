@@ -1,4 +1,0 @@
-<map id="Sudoku.Models.SudokuCell.HighLight" name="Sudoku.Models.SudokuCell.HighLight">
-<area shape="rect" id="node1" title="hightlight this cell (set background to red)" alt="" coords="268,5,455,47"/>
-<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_sudoku_manager.html#ad8fa43455d9294c373b34fe9903d942e" title="highlight wrongly filled sudoku cells" alt="" coords="5,5,220,47"/>
-</map>

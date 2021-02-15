@@ -1,4 +1,0 @@
-<map id="Sudoku.Models.SudokuGenerator.RemoveValues" name="Sudoku.Models.SudokuGenerator.RemoveValues">
-<area shape="rect" id="node1" title="generates valid sudoku grid &#45; remove values from valid filled board" alt="" coords="275,5,496,47"/>
-<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#ac8d97518831c64efaf069e546a33806f" title=" " alt="" coords="5,5,227,47"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="Sudoku.Models.SudokuGenerator.CanCellContainAnotherValue" name="Sudoku.Models.SudokuGenerator.CanCellContainAnotherValue">
-<area shape="rect" id="node1" title="check if cell can have another value than value" alt="" coords="5,100,227,141"/>
-<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_sudoku_square.html#ace018e0efcc29bae5d6d52d3505ace8d" title="get all sudoku cells in this sudoku square in 1&#45;dimensional List" alt="" coords="282,5,487,47"/>
-<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_board.html#ae420e3806e7ab5b2f335de58eb4ac254" title="Get N&#45;th column from the board (indexes start from 0)" alt="" coords="287,71,482,112"/>
-<area shape="rect" id="node6" href="$class_sudoku_1_1_models_1_1_board.html#a6d2da1548f1984ca6822786de7da4245" title="Get N&#45;th row from the board (row indexes start from 0)" alt="" coords="275,137,495,163"/>
-<area shape="rect" id="node7" href="$class_sudoku_1_1_models_1_1_board.html#afd923cb84e9a5111be8a04536655a0a0" title="get square which contains cell in selected row &#160;and column" alt="" coords="277,188,493,229"/>
-<area shape="rect" id="node4" href="$class_sudoku_1_1_models_1_1_sudoku_square.html#ad96aa1288b17bc777e17984c9981c3ea" title="get all cells in N&#45;th row or column" alt="" coords="562,71,767,112"/>
-<area shape="rect" id="node5" href="$class_sudoku_1_1_models_1_1_board.html#a736fb313d973f10d35566ec97e687ef9" title="get square with specified ID, returns null if ID isn&#39;t found" alt="" coords="543,137,787,163"/>
-</map>

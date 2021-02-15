@@ -1,5 +1,0 @@
-<map id="Sudoku.Models.Board.SwapRowSquares" name="Sudoku.Models.Board.SwapRowSquares">
-<area shape="rect" id="node1" title="swap rows of squares" alt="" coords="544,5,731,47"/>
-<area shape="rect" id="node2" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#accc1c663d947c84a3432c414dc636cbc" title="get random valid completed sudoku grid" alt="" coords="275,5,496,47"/>
-<area shape="rect" id="node3" href="$class_sudoku_1_1_models_1_1_sudoku_generator.html#ac8d97518831c64efaf069e546a33806f" title=" " alt="" coords="5,5,227,47"/>
-</map>

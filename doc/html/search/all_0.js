@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['_5fcontentloaded_0',['_contentLoaded',['../class_sudoku_1_1_app.html#a8d479e1c304920aac4bf3d7abb4b9dbb',1,'Sudoku::App::_contentLoaded()'],['../class_sudoku_1_1_main_window.html#acc4338670698708ff05743c5d2c9fc1d',1,'Sudoku::MainWindow::_contentLoaded()'],['../class_sudoku_1_1_views_1_1_game_w.html#aba7878f747d8f7baaf52096462c534a2',1,'Sudoku::Views::GameW::_contentLoaded()'],['../class_sudoku_1_1_views_1_1_game_window.html#a1e0ebd1a1ad2da4b19c6a1ae0841173f',1,'Sudoku::Views::GameWindow::_contentLoaded()'],['../class_sudoku_1_1_views_1_1_window1.html#a8e35d1daed118aa1e8bb27afd428c4f2',1,'Sudoku::Views::Window1::_contentLoaded()'],['../class_sudoku_1_1_views_1_1_winner_window.html#aca29507f1a685b07120d334d687ea4a5',1,'Sudoku::Views::WinnerWindow::_contentLoaded()']]]
-];
